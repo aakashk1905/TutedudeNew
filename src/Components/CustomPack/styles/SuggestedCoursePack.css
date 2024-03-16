@@ -1,0 +1,268 @@
+.scp-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 0;
+  background: linear-gradient(
+    91deg,
+    rgba(245, 215, 255, 0.3) 2.57%,
+    rgba(255, 234, 220, 0.3) 98.55%
+  );
+}
+
+.scp-card {
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 30.187px;
+  border: 1.509px solid var(--tutedude-color-primary-10, #f4e9f4);
+  background: var(--color-guide-common-white, #fff);
+  box-shadow: 0px 4px 23.9px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  width: 391px;
+  padding: 24.149px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22.64px;
+  box-sizing: border-box;
+}
+
+.scp-card-head {
+  overflow: hidden;
+  color: #5b00d1;
+  text-overflow: ellipsis;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.scp-card-head2 {
+  color: var(--tutedude-color-neutral-20100, #374957);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.scp-card-mid-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7.547px;
+}
+
+.scp-card-list {
+  display: flex;
+  align-items: center;
+  gap: 7.547px;
+  color: var(--tutedude-color-neutral-2075, #697781);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.scp-price-cont {
+  display: flex;
+  align-items: center;
+  gap: 15.093px;
+  align-self: stretch;
+}
+
+.scp-ogp {
+  color: var(--tutedude-color-primary-20, #e9d3e9);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 21.131px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: line-through;
+  text-transform: capitalize;
+}
+
+.scp-disp {
+  color: #494949;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 36.224px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.scp-sav {
+  color: var(--tutedude-color-neutral-2050, #9ba4ab);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.scp-line {
+  background: #ebedef;
+  width: 100%;
+  height: 3.019px;
+}
+
+.scp-cta {
+  cursor: pointer;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #7531e4 0%, #9257f3 100%);
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24.149px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+
+  display: flex;
+  height: 65px;
+  justify-content: center;
+  align-items: center;
+  gap: 15.093px;
+  align-self: stretch;
+}
+
+.scprefundabs {
+  position: absolute;
+  right: 0;
+  top: 34px;
+}
+
+.scp-cards-cont {
+  width: 100%;
+  align-self: flex-end;
+  overflow: scroll;
+  padding: 20px;
+  padding-left: 10%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+  cursor: grab;
+}
+
+.scp-card-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .scp-card {
+    position: relative;
+    border-radius: 30.187px;
+    border: 1.509px solid var(--tutedude-color-primary-10, #f4e9f4);
+    background: var(--color-guide-common-white, #fff);
+    box-shadow: 0px 4px 23.9px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    width: 291px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12.64px;
+    box-sizing: border-box;
+    height: fit-content;
+  }
+  .scprefundabs {
+    width: 50%;
+  }
+  .scp-card-head {
+    overflow: hidden;
+    color: #5b00d1;
+    text-overflow: ellipsis;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .scp-disp {
+    color: #494949;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .scp-card-head2 {
+    color: var(--tutedude-color-neutral-20100, #374957);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+  .scp-card-mid-cont {
+    width: 100%;
+  }
+  .scp-card-list {
+    width: 100%;
+  }
+  .scp-sav {
+    color: var(--tutedude-color-neutral-2050, #9ba4ab);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .scp-ogp {
+    color: var(--tutedude-color-primary-20, #e9d3e9);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: line-through;
+    text-transform: capitalize;
+  }
+  .scp-price-cont {
+    display: flex;
+    align-items: center;
+    gap: 15.093px;
+    align-self: stretch;
+  }
+
+  .scp-card-list {
+    display: flex;
+    align-items: center;
+    gap: 7.547px;
+    color: var(--tutedude-color-neutral-2075, #697781);
+    font-family: Poppins;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}

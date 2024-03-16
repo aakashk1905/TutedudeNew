@@ -1,0 +1,226 @@
+.hr-cont {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  min-height: 800px;
+  /* box-sizing: border-box; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  padding: 20px 0;
+}
+
+.hr-head {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  text-transform: capitalize;
+  background: linear-gradient(180deg, #3c008b 0%, #9060de 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hr-inner-cont {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* gap:50px; */
+}
+.hr-card-cont {
+  width: 33.33%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hr-cards {
+  width: 90%;
+  box-sizing: border-box;
+  height: 623px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 4px 25px 0px rgba(127, 48, 255, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.hr-step {
+  display: flex;
+  width: 50%;
+  height: 55px;
+  position: absolute;
+  top: -27px;
+  left: 25%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  border: 1px solid #ffbdfc;
+  background: linear-gradient(180deg, #f8dcff 0%, #ffecf3 100%);
+  box-shadow: 6px 4px 10px 0px rgba(91, 0, 209, 0.17);
+  color: #a342be;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.hr-card-head {
+  color: #7530e4;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  z-index: 11;
+  line-height: 139%; /* 33.36px */
+}
+
+.hr-card-text {
+  width: 60%;
+  color: #313131;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  z-index: 11;
+  line-height: 146%; /* 23.36px */
+  text-transform: capitalize;
+  padding: 10px 0;
+}
+.hr-card-price-text {
+  color: #7530e4;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 146%;
+  z-index: 11;
+  text-transform: capitalize;
+  padding: 5px 0;
+}
+.hr-card-btn {
+  cursor: pointer;
+  display: flex;
+  width: 70%;
+  height: 60px;
+  /* padding: 24px 59px; */
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(92deg, #7530e4 8.02%, #aa76ff 121.4%);
+  z-index: 11;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.hr-card-btm-color {
+  position: absolute;
+  width: 96%;
+  height: 65%;
+  bottom: 15px;
+  border-radius: 25px;
+  background: linear-gradient(
+    192deg,
+    rgba(255, 220, 228, 0.02) 8.86%,
+    #ffe8e5 106.21%
+  );
+  z-index: 1;
+}
+
+.hr-card-text1 {
+  width: 85%;
+  color: #4a4a4a;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139%; /* 25.02px */
+  text-transform: capitalize;
+  z-index: 11;
+  padding: 10px 0;
+}
+.hr-col {
+  color: #7530e4;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 139%;
+  text-transform: capitalize;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .hr-cont {
+    width: 100vw;
+    height: auto;
+  }
+   .hr-inner-cont {
+    width: 100%;
+    row-gap: 30px;
+    flex-wrap: wrap;}
+  .hr-card-cont {
+    width: 50%;
+    align-items: end;
+  }
+
+}
+
+
+@media screen and (max-width: 700px) {
+  .hr-cont {
+    width: 100vw;
+    height: auto;
+  }
+  .hr-col {
+    font-size: 16px;
+  }
+
+  .hr-head {
+    font-size: 32px;
+    width: 80%;
+  }
+  .hr-card-text1 {
+    font-size: 16px;
+  }
+
+  .hr-inner-cont {
+    width: 90%;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .hr-card-cont {
+    width: 100%;
+    align-items: end;
+  }
+
+}

@@ -1,0 +1,125 @@
+:root {
+  --purple: #844fdb;
+  --green: rgba(43, 167, 0, 0.7);
+  --orange: rgba(209, 113, 0, 0.7);
+  --blue: rgba(0, 134, 209, 0.7);
+}
+.bc-cont {
+  display: flex;
+  width: 100vw;
+  padding: 59px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 253, 0) 0%,
+    rgba(248, 246, 253, 0) 100%
+  );
+}
+
+.bc-mid {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.bc-mid-chip {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--purple);
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: var(--purple);
+  font-family: "DM Sans";
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 134.375%;
+  height: 64px;
+}
+
+.bc-chips-cont {
+  width: 85%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 32px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
+  .bc-cont {
+    gap: 30px;
+  }
+  .bc-mid {
+    justify-content: flex-start;
+    width: 100%;
+    overflow: scroll;
+    padding: 0 0 0 10px;
+  }
+  .bc-mid-chip {
+    display: flex;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--purple);
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: var(--purple);
+    font-family: "DM Sans";
+    font-size: 14px;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 134.375%;
+    height: 0;
+    flex-shrink: 0;
+  }
+  .bc-chips-cont {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bc-cont {
+    gap: 30px;
+  }
+  .bc-mid {
+    justify-content: flex-start;
+    width: 100%;
+    overflow: scroll;
+    padding: 0 0 0 10px;
+  }
+  .bc-mid-chip {
+    display: flex;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--purple);
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: var(--purple);
+    font-family: "DM Sans";
+    font-size: 14px;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 134.375%;
+    height: 0;
+    flex-shrink: 0;
+  }
+  .bc-chips-cont {
+    justify-content: center;
+  }
+}

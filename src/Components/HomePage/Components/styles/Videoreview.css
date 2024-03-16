@@ -1,0 +1,263 @@
+.vr-cont {
+  display: flex;
+
+  padding: 96px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  flex-shrink: 0;
+}
+
+.vr-text {
+  color: rgba(38, 50, 56, 0.7);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 750px;
+}
+
+.vr-scroll-cont.active {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+
+  transform: scale(1.05);
+}
+
+.vr-scroll-cont {
+  transition: all 0.2s;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  overflow: scroll;
+}
+
+.vr-card {
+  width: 352px;
+  height: 568px;
+  flex-shrink: 0;
+  background: lightgray 50% / cover no-repeat;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.vr-card-inner {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  z-index: 111;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 47px 0;
+}
+
+.vr-name-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.vr-name {
+  color: #fff;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.vr-post {
+  color: #fff;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+
+@media screen and (max-width: 1000px) {
+  .vr-cont {
+    display: flex;
+
+    padding: 36px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    flex-shrink: 0;
+  }
+
+  .vr-text {
+    color: rgba(38, 50, 56, 0.7);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 85%;
+  }
+
+  .vr-scroll-cont.active {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+
+    transform: scale(1.05);
+  }
+
+  .vr-scroll-cont {
+    transition: all 0.2s;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+  }
+
+  .vr-card {
+    width: 280px;
+    height: 468px;
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vr-card-inner {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    height: 65%;
+    width: 100%;
+    position: absolute;
+    z-index: 111;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 47px 0;
+  }
+
+  .vr-name-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .vr-name {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .vr-post {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .vr-cont {
+    display: flex;
+
+    padding: 36px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    flex-shrink: 0;
+  }
+
+  .vr-text {
+    color: rgba(38, 50, 56, 0.7);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 85%;
+  }
+
+  .vr-scroll-cont.active {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+
+    transform: scale(1.05);
+  }
+
+  .vr-scroll-cont {
+    transition: all 0.2s;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+  }
+
+  .vr-card {
+    width: 280px;
+    height: 468px;
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vr-card-inner {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    height: 65%;
+    width: 100%;
+    position: absolute;
+    z-index: 111;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 47px 0;
+  }
+
+  .vr-name-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .vr-name {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .vr-post {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+  }
+}

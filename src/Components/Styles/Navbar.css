@@ -1,0 +1,110 @@
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6vw;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  width: 100vw;
+  height: 84px;
+  border: 1px solid #fff;
+  background: linear-gradient(180deg, #fbfbfb 0%, rgba(251, 251, 251, 0) 100%);
+  box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(17.5px);
+  z-index: 1111;
+}
+
+.nav-login-cont {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.nav-login {
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #7530e4;
+  background: #fff;
+  display: flex;
+  width: 103px;
+  height: 40px;
+  /* padding: 4px 42px 5px 40px; */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  color: #5b00d1;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.nav-signup {
+  cursor: pointer;
+  display: flex;
+  width: 161px;
+  height: 40px;
+  /* padding: 2px 27px 5px 27px; */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #7530e4;
+
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-logo-cont {
+    width: 150px;
+    overflow: hidden;
+  }
+
+  .nav-login-cont {
+    display: flex;
+    gap: 10px;
+  }
+  .nav-login {
+    display: flex;
+    box-sizing: border-box;
+    font-size: 12px;
+    width: 62px;
+    height: 31px;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .nav-signup {
+    display: flex;
+    box-sizing: border-box;
+    width: 79px;
+    height: 31px;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}

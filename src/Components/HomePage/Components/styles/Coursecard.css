@@ -1,0 +1,41 @@
+.cc-cont {
+  width: 280px;
+  display: flex;
+  width: 250px;
+  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 100px;
+  border: 1px solid rgba(91, 0, 209, 0.32);
+  background: #fff;
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.cc-left {
+  display: flex;
+  padding-left: 8px;
+  align-items: center;
+  gap: 8px;
+
+  color: #263238;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.cc-right {
+  box-sizing: border-box;
+  border-radius: 100px;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,402 @@
+.hero-cont {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../Assests/herobg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-inner-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero-left-cont {
+  width: 35vw;
+  height: 100%;
+  padding-left: 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-iit-cont {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: linear-gradient(
+    90deg,
+    #4d0ed3 10.65%,
+    rgba(190, 63, 234, 0.83) 105.56%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 10px;
+  border: 1.5px solid #965ce2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 12px 16px;
+}
+.iit {
+  background: linear-gradient(
+    90deg,
+    #4d0ed3 -10.18%,
+    rgba(190, 63, 234, 0.83) 94.66%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-master {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  color: #959595;
+  font-family: Poppins;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 143%; /* 64.35px */
+  text-transform: capitalize;
+}
+
+.hero-uiux {
+  background: linear-gradient(180deg, #350276 21.33%, #8c46e6 57.63%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Poppins;
+  font-size: clamp(36px, 3.5vw, 45px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 143%;
+  text-transform: capitalize;
+}
+
+.hero-free-cont {
+  border-radius: 3px;
+  background: linear-gradient(175deg, #e6d2fd -5.64%, #ffe2f8 96.11%);
+  display: inline-flex;
+  transform: rotate(-7.463deg);
+  padding: 3px 13px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.hero-free {
+  background: linear-gradient(180deg, #6419de 0%, #e09cf0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Poppins;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.hero-refund {
+  color: #858585;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  width: 307px;
+}
+
+.hero-google-cont {
+  display: flex;
+  gap: 10px;
+  /* justify-content: space-between ; */
+  align-items: center;
+  border-radius: 9px;
+  padding: 0 15px;
+  border: 2px solid #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.37) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: 0px 4px 22px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  width: fit-content;
+  height: 49px;
+  flex-shrink: 0;
+}
+
+.hero-google-left-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.hero-stars-cont {
+  display: flex;
+  gap: 5px;
+}
+
+.hero-stars-text {
+  color: #340078;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.hero-reviews {
+  color: #7e7e7e;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.hero-cta-cont {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.hero-price-cont {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    #340078 0%,
+    rgba(131, 72, 207, 0.74) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.hero-price-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  flex-shrink: 0;
+  color: #7b7b7b;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139%; /* 16.68px */
+}
+.hero-enroll-btn {
+  cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(92deg, #7530e4 8.02%, #aa76ff 121.4%);
+  display: flex;
+  width: 260px;
+  height: 50px;
+  /* padding: 24px 59px; */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.hero-right-cont {
+  width: 65vw;
+  /* height:fit-content; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-right-cont video {
+  width: 80%;
+  height: auto;
+
+  mix-blend-mode: multiply;
+}
+.hero-left-cont {
+  /* justify-content: end;
+  padding-bottom: 30px;
+  gap :5px; */
+  height: calc(100% - 84px);
+}
+.hero-inner-cont {
+  align-items: end;
+}
+
+.hero-right-cont {
+  height: calc(100% - 84px);
+}
+
+@media screen and (max-width: 1020px) {
+  .hero-cont {
+    box-sizing: border-box;
+    width: 100vw;
+    height: auto;
+    background: none;
+    position: relative;
+  }
+  .hero-cont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../Assests/herobg.svg"); /* Replace with your actual background image */
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+  }
+
+  .hero-inner-cont {
+    width: 100vw;
+    height: 700px;
+  }
+  .hero-left-cont {
+    width: 100vw;
+    padding: 0;
+    align-items: center;
+  }
+
+  .hero-iit-cont {
+    align-self: center;
+  }
+
+  .hero-master {
+    width: 90vw;
+    height: auto;
+  }
+
+  .hero-uiux {
+    font-size: 36px;
+    line-height: normal;
+    height: auto;
+  }
+
+  .hero-free {
+    font-size: 36px;
+  }
+
+  .hero-right-cont {
+    display: none;
+  }
+
+  .hero-refund {
+    width: 90%;
+  }
+  .hero-google-cont {
+    margin: 0 0 0 5%;
+    align-self: flex-start;
+  }
+  .hero-cta-cont {
+    width: 90%;
+  }
+}
+
+@media screen and (max-height: 700px) and (min-width: 1000px) {
+  .hero-left-cont {
+    gap: 5px;
+    /* height: calc(100% - 84px); */
+  }
+  .hero-cta-cont {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-cont {
+    box-sizing: border-box;
+    width: 100vw;
+    height: auto;
+    background: none;
+    position: relative;
+  }
+  .hero-cont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../Assests/herobg.svg"); /* Replace with your actual background image */
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+  }
+
+  .hero-inner-cont {
+    width: 100vw;
+    height: 700px;
+  }
+  .hero-left-cont {
+    width: 100vw;
+    padding: 0;
+    align-items: center;
+  }
+
+  .hero-iit-cont {
+    align-self: center;
+  }
+
+  .hero-master {
+    width: 90vw;
+    height: auto;
+  }
+
+  .hero-uiux {
+    font-size: 36px;
+    line-height: normal;
+    height: auto;
+  }
+
+  .hero-free {
+    font-size: 36px;
+  }
+
+  .hero-right-cont {
+    display: none;
+  }
+
+  .hero-refund {
+    width: 90%;
+  }
+  .hero-google-cont {
+    margin: 0 0 0 5%;
+    align-self: flex-start;
+  }
+  .hero-cta-cont {
+    width: 90%;
+  }
+}

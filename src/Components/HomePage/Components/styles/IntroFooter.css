@@ -1,0 +1,76 @@
+.ifoot-cont {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(232, 231, 255, 0.63);
+  padding: 25px 0;
+  cursor: default;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly; /* Align items evenly before wrapping */
+  align-content: flex-start;
+}
+.ifoot-head {
+  color: #000;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 167%; /* 36.74px */
+}
+
+.ifoot-text {
+  color: #626262;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 192%;
+}
+
+.ifoot-main-cont {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+a {
+  text-decoration: none;
+}
+.ifoot-inner-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ifoot-inner-cont1 {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.ifoot-inner-cont1 img {
+  cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  .ifoot-text {
+    font-size: clamp(15px, 1.9vw, 18px);
+  }
+  .ifoot-main-cont {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ifoot-cont {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgba(232, 231, 255, 0.63);
+    padding: 25px 0;
+    cursor: default;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+}

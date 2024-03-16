@@ -1,0 +1,310 @@
+.login-cont {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../Assests/loginbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.inp-conts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.login-inner-cont {
+  border-radius: 32px;
+  background: #fff;
+  height: auto;
+  padding: 64px 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.l-logo-cont {
+  width: 370px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--tutedude-color-primary-100, #902190);
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.l-logo-cont img {
+  width: 162px;
+}
+.l-cross-cont {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.l-cross-cont img {
+  width: 20px;
+}
+
+.googlesign {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  width: auto;
+  padding: 10px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.12);
+  color: var(--tutedude-color-primary-100, #902190);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.08px;
+}
+
+.l-or {
+  color: var(--tutedude-color-neutral-grey-50, #acacac);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+
+.l-inp {
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1.5px solid var(--tutedude-color-neutral-grey-50, #acacac);
+  display: flex;
+  width: 250px;
+  padding: 0 0 0 50px;
+  height: 42px;
+  align-items: center;
+  gap: 12px;
+  color: var(--tutedude-color-neutral-grey-75, #828282);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.l-inp::placeholder {
+  color: var(--tutedude-color-neutral-grey-75, #828282);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.l-btn {
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(
+    --tutedude-color-primary-gradient,
+    radial-gradient(50% 75.48% at 50% 50%, #a355a3 0%, #912191 100%)
+  );
+  display: flex;
+  width: 242px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+
+.l-new {
+  color: var(--tutedude-color-neutral-grey-100, #585858);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.l-sign {
+  cursor: pointer;
+  color: var(--tutedude-color-secondary-100, #ffa239);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.inp-cont {
+  position: relative;
+}
+.inp-img {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .login-inner-cont {
+    padding: 35px 0;
+  }
+  .l-logo-cont {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--tutedude-color-primary-100, #902190);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .l-logo-cont img {
+    width: 100px;
+  }
+  .l-cross-cont {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .l-cross-cont img {
+    width: 20px;
+  }
+
+  .googlesign {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    width: auto;
+    padding: 10px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.87);
+    box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.12);
+    color: var(--tutedude-color-primary-100, #902190);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.08px;
+  }
+
+  .l-or {
+    color: var(--tutedude-color-neutral-grey-50, #acacac);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.9px;
+  }
+
+  .l-inp {
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1.5px solid var(--tutedude-color-neutral-grey-50, #acacac);
+    display: flex;
+    width: 250px;
+    padding: 0 0 0 50px;
+    height: 42px;
+    align-items: center;
+    gap: 12px;
+    color: var(--tutedude-color-neutral-grey-75, #828282);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+  }
+
+  .l-inp::placeholder {
+    color: var(--tutedude-color-neutral-grey-75, #828282);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+  }
+
+  .l-btn {
+    cursor: pointer;
+    border-radius: 10px;
+    background: var(
+      --tutedude-color-primary-gradient,
+      radial-gradient(50% 75.48% at 50% 50%, #a355a3 0%, #912191 100%)
+    );
+    display: flex;
+    width: 242px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.9px;
+  }
+
+  .l-new {
+    color: var(--tutedude-color-neutral-grey-100, #585858);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .l-sign {
+    cursor: pointer;
+    color: var(--tutedude-color-secondary-100, #ffa239);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .inp-cont {
+    position: relative;
+  }
+  .inp-img {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+}

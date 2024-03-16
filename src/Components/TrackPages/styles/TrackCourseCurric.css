@@ -1,0 +1,207 @@
+.track-cc-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+  padding: 50px 0;
+  background: #f8f4fd;
+}
+.track-cc-top {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+}
+.track-cc-top-sub-head {
+  display: flex;
+  padding: 16px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 1000px;
+  background: rgba(117, 48, 228, 0.1);
+  color: #7530e4;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+}
+
+.track-cc-top-head b {
+  background: linear-gradient(92deg, #8846ef 1.46%, #ebcb2e 57.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.track-cc-top-head {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 70px */
+  letter-spacing: -1.68px;
+  text-transform: capitalize;
+}
+
+.track-cc-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 28px;
+  border: 1px solid rgba(55, 73, 87, 0.1);
+  width: 80%;
+  overflow: hidden;
+}
+
+.track-cc-mid-card {
+  background: #fff;
+  display: flex;
+  width: 100%;
+  padding: 28px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.track-cc-mid-card-left {
+  color: #374957;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 40px */
+  letter-spacing: -0.96px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.track-cc-mid-card-left span {
+  color: rgba(55, 73, 87, 0.75);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+  text-transform: capitalize;
+}
+
+.track-cc-mid-card-right {
+  border-radius: 1000px;
+  border: 1px solid rgba(117, 48, 228, 0.1);
+  background: rgba(117, 48, 228, 0.1);
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: #7530e4;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+.track-cc-btm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5px;
+  width: 80%;
+}
+
+.track-cc-btm-card {
+  border-radius: 16px;
+  border: 1px solid #8846ef;
+  background: #fff;
+  width: 376px;
+  display: flex;
+  padding: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.track-cc-btm-card img {
+  width: 96px;
+}
+
+.track-cc-btm-card-text {
+  color: #374957;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 35px */
+  letter-spacing: -0.84px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+.track-cc-btm-card-text span {
+  color: rgba(55, 73, 87, 0.75);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+}
+
+@media screen and (max-width: 1400px) {
+  .track-cc-btm {
+    width: 95%;
+  }
+  .track-cc-btm-card-text {
+    font-size: clamp(20px, 2vw, 28px);
+  }
+  .track-cc-btm-card-text span {
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+  .track-cc-mid {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .track-cc-btm {
+    width: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .track-cc-btm-card {
+    width: 300px;
+  }
+  .track-cc-mid-card-right {
+    width: 230px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .track-cc-mid-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .track-cc-top-head {
+    font-size: 34px;
+  }
+  .track-cc-top-sub-head {
+    font-size: 12px;
+  }
+}

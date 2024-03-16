@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Category from "./Pages/Category";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Payment from "./Pages/Payment";
+import CustomPack from "./Pages/CustomPack";
+import AllAccess from "./Pages/AllAccess";
+import Main from "./Pages/Main";
+import TrackPages from "./Pages/TrackPages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route path="" element={<Main />} />
+          <Route path=":slug" element={<Category />}></Route>
+          <Route path="payment/:slug" element={<Payment />} />
+          <Route path="custompack" element={<CustomPack />} />
+          <Route path="allaccess" element={<AllAccess />} />
+          <Route path="track" element={<TrackPages />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

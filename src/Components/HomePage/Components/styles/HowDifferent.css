@@ -1,0 +1,221 @@
+.hd-cont {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 36px 0;
+  gap: 55px;
+}
+
+.hd-tb-cont {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hd-tb {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(69, 90, 100, 0.25);
+}
+.hd-tb-td {
+  width: 23%;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgba(69, 90, 100, 0.25);
+  background: linear-gradient(180deg, #f8f2ff 0%, #fefdff 100%);
+}
+.hd-tb-td img {
+  width: 140px;
+}
+.hd-tick img {
+  width: 56px;
+}
+
+.hd-first-w {
+  width: 31%;
+  color: #455a64;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.hd-tb-head {
+  color: #44009b;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.hd-tb-text {
+  color: #455a64;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1000px) {
+  .hd-cont {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 36px 0;
+    gap: 30px;
+  }
+
+  .hd-tb-cont {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid rgba(69, 90, 100, 0.25);
+  }
+  .hd-tb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(69, 90, 100, 0.25);
+    border-left: none;
+    border-right: none;
+  }
+  .hd-tb-td {
+    width: 23%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(69, 90, 100, 0.25);
+    background: linear-gradient(180deg, #f8f2ff 0%, #fefdff 100%);
+    
+  }
+  .hd-tb-td img {
+    width: 95%;
+  }
+  .hd-tick img {
+    width: 50px;
+  }
+
+  .hd-first-w {
+    width: 31%;
+    color: #455a64;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .hd-tb-head {
+    color: #44009b;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .hd-tb-text {
+    color: #455a64;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hd-cont {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 36px 0;
+    gap: 30px;
+  }
+
+  .hd-tb-cont {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid rgba(69, 90, 100, 0.25);
+  }
+  .hd-tb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(69, 90, 100, 0.25);
+    border-left: none;
+    border-right: none;
+  }
+  .hd-tb-td {
+    width: 23%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(69, 90, 100, 0.25);
+    background: linear-gradient(180deg, #f8f2ff 0%, #fefdff 100%);
+    
+  }
+  .hd-tb-td img {
+    width: 95%;
+  }
+  .hd-tick img {
+    width: 30px;
+  }
+
+  .hd-first-w {
+    width: 31%;
+    color: #455a64;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .hd-tb-head {
+    color: #44009b;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .hd-tb-text {
+    color: #455a64;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}

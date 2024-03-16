@@ -1,0 +1,77 @@
+.allben-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0;
+  background: linear-gradient(
+    91deg,
+    #f8f4ff 0.76%,
+    rgba(255, 238, 223, 0.25) 100.61%
+  );
+}
+.allben-cards-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.allben-btm-text {
+  color: #340078;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.allben-cta {
+  border-radius: 10px;
+  background: linear-gradient(92deg, #7530e4 8.02%, #aa76ff 121.4%);
+  display: flex;
+  width: 303px;
+  height: 60px;
+  padding: 24px 59px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1150px) {
+  .allben-cards-cont {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .allben-cards-cont {
+    width: 95%;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .uc-all-card {
+    width: 290px;
+    height: 350px;
+  }
+  .uc-card-text-all {
+    display: flex;
+    width: 90%;
+    font-size: 12px !important;
+  }
+  .all-uc-card-head {
+    font-size: 18px !important;
+  }
+}

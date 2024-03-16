@@ -1,0 +1,114 @@
+.rev-cont {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0 30px 0;
+  gap: 40px;
+  overflow: hidden;
+}
+.rev-head {
+  color: #340078;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.rev-inner-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  width: 80%;
+}
+
+.rev-video-temp {
+  border-radius: 15px;
+  background: linear-gradient(0deg, #090909 -2.64%, rgba(88, 88, 88, 0) 71.41%);
+  width: 256px;
+  height: 388.535px;
+  flex-shrink: 0;
+  border: 1pt solid black;
+  box-sizing: border-box;
+}
+.rev-name {
+  color: #340078;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.rev-job {
+  color: #727272;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.rev-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .rev-head {
+    font-size: 32px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .rev-inner-cont {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 35px;
+    overflow: scroll;
+    /* align-self: flex-end; */
+    padding: 0 20px 0 20px;
+  }
+
+  .rev-video-temp {
+    border-radius: 15px;
+    background: linear-gradient(
+      0deg,
+      #090909 -2.64%,
+      rgba(88, 88, 88, 0) 71.41%
+    );
+    width: 256px;
+    height: 388.535px;
+    flex-shrink: 0;
+    border: 1pt solid black;
+    box-sizing: border-box;
+  }
+  .rev-name {
+    color: #340078;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .rev-job {
+    color: #727272;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .rev-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

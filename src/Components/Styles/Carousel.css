@@ -1,0 +1,209 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  flex-direction: column;
+}
+
+.carousel-image {
+  width: 633px;
+  height: 381px;
+}
+
+.carousel-arrow {
+  width: 55px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: black;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arr-left {
+  left: -55px;
+}
+
+.arr-right {
+  border: none;
+  right: -55px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-dots button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 50px;
+}
+
+.dots-active {
+  color: #5b00d1 !important;
+}
+
+.car-img-cont {
+  width: 700px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.carr-data-cont {
+  width: 633px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.carr-head-cont {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.carr-head {
+  color: #340078;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.carr-author {
+  color: #666;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.carr-type {
+  color: #666;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 60vw;
+  }
+
+  .arr-left {
+    left: -45px;
+  }
+
+  .arr-right {
+    border: none;
+    right: -45px;
+    padding: 0;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .carousel-dots button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 50px;
+  }
+
+  .dots-active {
+    color: #5b00d1 !important;
+  }
+
+  .car-img-cont {
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .carr-data-cont {
+    width: 95%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+  }
+
+  .carr-head-cont {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .carr-head {
+    color: #340078;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .carr-author {
+    color: #666;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .carr-type {
+    display: none;
+  }
+}

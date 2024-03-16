@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  border: 1pt solid red;
+}
+
+.sidebar {
+  width: 290px;
+  height: 100%;
+  border: 3pt solid green;
+}
+
+.dbcontent {
+  width: 100%;
+  border: 3pt solid blue;
+}

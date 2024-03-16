@@ -1,0 +1,150 @@
+.int-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  border: 1px solid #ececec;
+  box-shadow: 3px 4px 24.7px 0px rgba(200, 166, 255, 0.15);
+  overflow: hidden;
+  width: 362px;
+}
+.int-card > img {
+  width: 100%;
+}
+
+.int-card-mid {
+  background: var(--color-guide-common-white, #fff);
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+}
+.int-lm {
+  display: flex;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  background: #efe0ff;
+
+  color: #7530e4;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.int-card-se {
+  border-radius: 12px;
+  background: rgba(38, 50, 56, 0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  color: #263238;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+}
+.int-card-head {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  align-self: stretch;
+
+  overflow: hidden;
+  color: #5b00d1;
+  text-overflow: ellipsis;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+
+.int-card-text-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6.127px;
+  align-self: stretch;
+}
+
+.int-card-text-head {
+  color: var(--tutedude-color-neutral-20100, #374957);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.int-card-list-cont {
+  display: flex;
+  align-items: center;
+  gap: 6.127px;
+  color: var(--tutedude-color-neutral-2075, #697781);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.int-card-price {
+  color: #263238;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 29.228px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.int-card-price-high {
+  border-radius: 100px;
+  border: 1px solid rgba(107, 184, 112, 0.1);
+  background: rgba(107, 184, 112, 0.1);
+  display: flex;
+  width: 143px;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: #6bb870;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 12.99px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media screen and (max-width: 600px) {
+  .int-card{
+    width: 320px;
+  }
+}

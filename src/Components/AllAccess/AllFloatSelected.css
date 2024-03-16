@@ -1,0 +1,39 @@
+.Allfloat-s-cont {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+  z-index: 2000000001 !important;
+}
+.Allfloat-s-inner-cont {
+  border-radius: 24px;
+  box-shadow: 0px 0px 10px 5px rgba(69, 90, 100, 0.25);
+
+  border-radius: 16px;
+  background: linear-gradient(93deg, #7530e4 0%, #9665e6 100%), #fff;
+  display: flex;
+  padding: 15px 64px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  text-transform: capitalize;
+
+  background: linear-gradient(93deg, #7530e4 0%, #9665e6 100%), #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .float-s-cont {
+    display: flex;
+  }
+}

@@ -1,0 +1,106 @@
+.int-cont {
+  background: linear-gradient(
+    94deg,
+    rgba(255, 240, 255, 0.59) 0%,
+    #fffcf5 95.38%
+  );
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 78px 0;
+}
+
+.int-cir-outer-cont {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.int-cir-cont {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.int-img-cir {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 1px dashed #455a64;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.int-cir-text {
+  color: #455a64;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 98px;
+}
+
+.int-car {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.parent {
+  width: 80%;
+}
+
+.sliderr {
+  margin: 0 20px;
+  overflow: "hidden";
+}
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+}
+
+.custom-dot-list-style button {
+  border: none;
+  background: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .int-cir-outer-cont {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .int-cir-outer-cont {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  .int-cir-outer-cont {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .int-cir-cont img {
+    width: 50px;
+  }
+  .int-img-cir {
+    width: auto;
+    height: auto;
+    padding: 12px;
+  }
+  .parent {
+    width: 95%;
+  }
+}
