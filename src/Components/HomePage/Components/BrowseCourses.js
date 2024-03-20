@@ -36,146 +36,171 @@ const BrowseCourses = () => {
       cimg: mern,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "mernstack",
     },
     {
       text: "React JS",
       cimg: react,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "reactjs",
     },
     {
       text: "React Native",
       cimg: react,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "reactnative",
     },
     {
       text: "App Development",
       cimg: appdev,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "appdevelopment",
     },
     {
       text: "Python",
       cimg: python,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "python",
     },
     {
       text: "Java",
       cimg: java,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "java",
     },
     {
       text: "C++",
       cimg: cpp,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "cpp",
     },
     {
       text: "PHP/MySQL Web Development",
       cimg: php,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
+      slug: "webdevelopment",
     },
     {
       text: "DevOPS",
       cimg: Devops,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "devops",
     },
     {
       text: "DBMS",
       cimg: DBMS,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "dbms",
     },
     {
       text: "Ethical Hacking",
       cimg: Hacking,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "ethicalhacking",
     },
     {
       text: "Competitive Programming",
       cimg: cp,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "competitiveprogramming",
     },
     {
       text: "Data Structures & Algorithms",
       cimg: dsa,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "datastructure",
     },
     {
       text: "Data Science",
       cimg: ds,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "datascience",
     },
     {
       text: "Digital Marketing",
       cimg: dm,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "digitalmarketing",
     },
     {
       text: "Stock Market",
       cimg: stockmarket,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
+      slug: "stockmarket",
     },
     {
       text: "Financial Risk Managment",
       cimg: frm,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "riskmanagement",
     },
     {
       text: "Technical Analysis",
       cimg: ta,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "technicalanalysis",
     },
     {
       text: "Financial Modelling & Valuation",
       cimg: fm,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "financialmodelling",
     },
     {
       text: "UI UX Designing",
       cimg: uiux,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "uiux",
     },
     {
       text: "Adobe Photoshop",
       cimg: ps,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "photoshop",
     },
     {
       text: "Adobe After Effects",
       cimg: ae,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "aftereffects",
     },
     {
       text: "Adobe Premiere Pro",
       cimg: pr,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "premierepro",
     },
     {
       text: "Adobe Illustrator",
       cimg: ai,
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
+      slug: "illustrator",
     },
   ];
+
   return (
     <div className="bc-cont">
       <div className="home-wu-top">
@@ -278,11 +303,12 @@ const BrowseCourses = () => {
         {courses.map((course, index) => {
           return (
             <Coursecard
-            key={index}
+              key={index}
               cimg={course.cimg}
               text={course.text}
               col={course.col}
               bg={course.bg}
+              slug={course.slug}
             />
           );
         })}

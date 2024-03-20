@@ -210,7 +210,22 @@
   font-weight: 500;
   line-height: 139%; /* 16.68px */
 }
+.hero-enroll-btn::before {
+  content: "";
+  background: rgba(198, 198, 198, 0.699);
+  mix-blend-mode: plus-lighter;
+  width: 40px;
+  height: 100%;
+  top: 0%;
+  left: -135%;
+  transform: skew(-45deg);
+  position: absolute;
+  animation: glare 3s infinite;
+  transition: all 2s;
+}
 .hero-enroll-btn {
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
   border-radius: 10px;
   background: linear-gradient(92deg, #7530e4 8.02%, #aa76ff 121.4%);

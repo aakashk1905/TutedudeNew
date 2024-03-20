@@ -1,139 +1,15 @@
 import React, { useState } from "react";
 import "./styles/ChooseCourse.css";
 import searchImg from "../../Assests/search.png";
-
-const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
+import useCart from "../../contexts/Cart";
+import courses from "../../contents/Courses.json";
+const ChooseCourse = () => {
+  const { setSelectedCourse, selectedCourse } = useCart();
   const [search, setSearch] = useState("");
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-  const courses = [
-    {
-      course_name: "UI/UX",
-      slug: "uiux",
-      category: "visual_arts",
-    },
-    {
-      course_name: "Python",
-      slug: "python",
-      category: "technical",
-    },
-    {
-      course_name: "Java",
-      slug: "java",
-      category: "technical",
-    },
-    {
-      course_name: "MERN Stack",
-      slug: "mernstack",
-      category: "technical",
-    },
-    {
-      course_name: "Web Development with PHP/MySQL",
-      slug: "webdevelopment",
-      category: "technical",
-    },
-    {
-      course_name: "App Development",
-      slug: "appdevelopment",
-      category: "technical",
-    },
-    {
-      course_name: "Ethical Hacking",
-      slug: "ethicalhacking",
-      category: "technical",
-    },
-    {
-      course_name: "Illustrator",
-      slug: "illustrator",
-      category: "visual_arts",
-    },
-    {
-      course_name: "Premiere Pro",
-      slug: "premierepro",
-      category: "visual_arts",
-    },
-    {
-      course_name: "Financial Modelling & Valuation",
-      slug: "financialmodelling",
-      category: "bussiness",
-    },
-    {
-      course_name: "Technical Analysis",
-      slug: "technicalanalysis",
-      category: "bussiness",
-    },
-    {
-      course_name: "Digital Marketing",
-      slug: "digitalmarketing",
-      category: "bussiness",
-    },
-    {
-      course_name: "Data Structures & Algorithms",
-      slug: "datastructure",
-      category: "technical",
-    },
-    {
-      course_name: "C++",
-      slug: "cpp",
-      category: "technical",
-    },
-    {
-      course_name: "React Native",
-      slug: "reactnative",
-      category: "technical",
-    },
-    {
-      course_name: "Data Science",
-      slug: "datascience",
-      category: "technical",
-    },
-    {
-      slug: "competitiveprogramming",
-      course_name: "Competetive Programming",
-      category: "technical",
-    },
-    {
-      slug: "aftereffects",
-      course_name: "After Effects",
-      category: "visual_arts",
-    },
-    {
-      slug: "photoshop",
-      course_name: "Photoshop",
-      category: "visual_arts",
-    },
-    {
-      slug: "fundamentalanalysis",
-      course_name: "Fundamental Analysis",
-      category: "bussiness",
-    },
-    {
-      slug: "riskmanagement",
-      course_name: "Risk Management",
-      category: "bussiness",
-    },
-    {
-      slug: "dbms",
-      course_name: "DataBase Management System",
-      category: "technical",
-    },
-    {
-      slug: "devops",
-      course_name: "DevOps",
-      category: "technical",
-    },
-    {
-      slug: "reactjs",
-      course_name: "React Js",
-      category: "technical",
-    },
-    {
-      course_name: "Machine Learning",
-      slug: "machinelearning",
-      category: "technical",
-    },
-  ];
+
   const filteredCourses = courses.filter(
     (course) =>
       course.course_name.toLowerCase().includes(search.toLowerCase()) ||
@@ -171,9 +47,9 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                   key={ind}
                   onClick={() => {
                     if (!selected) {
-                      setSelectedCourses((sc) => [...sc, course]);
+                      setSelectedCourse((sc) => [...sc, course]);
                     } else {
-                      setSelectedCourses((sc) =>
+                      setSelectedCourse((sc) =>
                         sc.filter(
                           (selectedCourse) =>
                             selectedCourse.course_name !== course.course_name
@@ -220,9 +96,9 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                     {!selected ? (
                       <div
                         className="chc-cta"
-                        onClick={() =>
-                          setSelectedCourses((sc) => [...sc, course])
-                        }
+                        // onClick={() =>
+                        //   setSelectedCourse((sc) => [...sc, course])
+                        // }
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +129,7 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                       <div
                         className="chc-cta chc-cta-selected"
                         onClick={() =>
-                          setSelectedCourses((sc) =>
+                          setSelectedCourse((sc) =>
                             sc.filter(
                               (selectedCourse) =>
                                 selectedCourse.course_name !==
@@ -310,9 +186,9 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                   key={ind}
                   onClick={() => {
                     if (!selected) {
-                      setSelectedCourses((sc) => [...sc, course]);
+                      setSelectedCourse((sc) => [...sc, course]);
                     } else {
-                      setSelectedCourses((sc) =>
+                      setSelectedCourse((sc) =>
                         sc.filter(
                           (selectedCourse) =>
                             selectedCourse.course_name !== course.course_name
@@ -360,7 +236,7 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                       <div
                         className="chc-cta"
                         onClick={() =>
-                          setSelectedCourses((sc) => [...sc, course])
+                          setSelectedCourse((sc) => [...sc, course])
                         }
                       >
                         <svg
@@ -392,7 +268,7 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                       <div
                         className="chc-cta chc-cta-selected"
                         onClick={() =>
-                          setSelectedCourses((sc) =>
+                          setSelectedCourse((sc) =>
                             sc.filter(
                               (selectedCourse) =>
                                 selectedCourse.course_name !==
@@ -449,9 +325,9 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                   key={ind}
                   onClick={() => {
                     if (!selected) {
-                      setSelectedCourses((sc) => [...sc, course]);
+                      setSelectedCourse((sc) => [...sc, course]);
                     } else {
-                      setSelectedCourses((sc) =>
+                      setSelectedCourse((sc) =>
                         sc.filter(
                           (selectedCourse) =>
                             selectedCourse.course_name !== course.course_name
@@ -499,7 +375,7 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                       <div
                         className="chc-cta"
                         onClick={() =>
-                          setSelectedCourses((sc) => [...sc, course])
+                          setSelectedCourse((sc) => [...sc, course])
                         }
                       >
                         <svg
@@ -531,7 +407,7 @@ const ChooseCourse = ({ setSelectedCourses, selectedCourse }) => {
                       <div
                         className="chc-cta chc-cta-selected"
                         onClick={() =>
-                          setSelectedCourses((sc) =>
+                          setSelectedCourse((sc) =>
                             sc.filter(
                               (selectedCourse) =>
                                 selectedCourse.course_name !==

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles/Testimonials.css";
-import revdp1 from "../Assests/revdp1.svg";
-const Testimonials = () => {
+const Testimonials = ({ reviews }) => {
   useEffect(() => {
     const slider = document.querySelector(".tm-scroll-cont");
     let isDown = false;
@@ -43,91 +42,27 @@ const Testimonials = () => {
         </div>
       </div>
       <div className="tm-scroll-cont">
-        <div className="tm-card tm-card1" style={{marginLeft:"50px"}}>
-          <div className="tm-card-text">
-            The instructor of this course is very sweet, she explains all the
-            concepts very elaboratively. Also mentors are actually the best, if
-            I asked something they will make sure I understand my doubt till the
-            end. Also the assignments and projects they gave me, made sure that
-            I get the industry exposure.
-          </div>
-          <div className="tm-line"></div>
-          <div className="tm-pro-cont">
-            <img src={revdp1} alt="revdp"></img>
-            <div >
-              <div className="tm-card-head">By Salmaan Ahmed,</div>
-              <div className="tm-card-head1">UI UX Designer, Bankly</div>
+        {reviews &&
+          reviews.map((rev, ind) => (
+            <div
+              className="tm-card tm-card1"
+              // style={ind === 0 && { marginLeft: "50px" }}
+              key={ind}
+            >
+              <div className="tm-card-text">{rev.review}</div>
+              <div className="tm-line"></div>
+              <div className="tm-pro-cont">
+                <img
+                  src={`https://ui-avatars.com/api/?background=random&name=${rev.name}`}
+                  alt="revdp"
+                ></img>
+                <div>
+                  <div className="tm-card-head">By {rev.name},</div>
+                  <div className="tm-card-head1">{rev.desig}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="tm-card">
-          <div className="tm-card-text">
-            The instructor of this course is very sweet, she explains all the
-            concepts very elaboratively. Also mentors are actually the best, if
-            I asked something they will make sure I understand my doubt till the
-            end. Also the assignments and projects they gave me, made sure that
-            I get the industry exposure.
-          </div>
-          <div className="tm-line"></div>
-          <div className="tm-pro-cont">
-            <img src={revdp1} alt="revdp"></img>
-            <div >
-              <div className="tm-card-head">By Salmaan Ahmed,</div>
-              <div className="tm-card-head1">UI UX Designer, Bankly</div>
-            </div>
-          </div>
-        </div>
-        <div className="tm-card">
-          <div className="tm-card-text">
-            The instructor of this course is very sweet, she explains all the
-            concepts very elaboratively. Also mentors are actually the best, if
-            I asked something they will make sure I understand my doubt till the
-            end. Also the assignments and projects they gave me, made sure that
-            I get the industry exposure.
-          </div>
-          <div className="tm-line"></div>
-          <div className="tm-pro-cont">
-            <img src={revdp1} alt="revdp"></img>
-            <div >
-              <div className="tm-card-head">By Salmaan Ahmed,</div>
-              <div className="tm-card-head1">UI UX Designer, Bankly</div>
-            </div>
-          </div>
-        </div>
-        <div className="tm-card">
-          <div className="tm-card-text">
-            The instructor of this course is very sweet, she explains all the
-            concepts very elaboratively. Also mentors are actually the best, if
-            I asked something they will make sure I understand my doubt till the
-            end. Also the assignments and projects they gave me, made sure that
-            I get the industry exposure.
-          </div>
-          <div className="tm-line"></div>
-          <div className="tm-pro-cont">
-            <img src={revdp1} alt="revdp"></img>
-            <div >
-              <div className="tm-card-head">By Salmaan Ahmed,</div>
-              <div className="tm-card-head1">UI UX Designer, Bankly</div>
-            </div>
-          </div>
-        </div>
-        <div className="tm-card tm-card2" style={{marginRight:"50px"}}>
-          <div className="tm-card-text">
-            The instructor of this course is very sweet, she explains all the
-            concepts very elaboratively. Also mentors are actually the best, if
-            I asked something they will make sure I understand my doubt till the
-            end. Also the assignments and projects they gave me, made sure that
-            I get the industry exposure.
-          </div>
-          <div className="tm-line"></div>
-          <div className="tm-pro-cont">
-            <img src={revdp1} alt="revdp"></img>
-            <div >
-              <div className="tm-card-head">By Salmaan Ahmed,</div>
-              <div className="tm-card-head1">UI UX Designer, Bankly</div>
-            </div>
-          </div>
-        </div>
+          ))}
       </div>
     </div>
   );

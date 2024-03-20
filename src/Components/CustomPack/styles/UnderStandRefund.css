@@ -20,6 +20,34 @@
   -webkit-text-fill-color: transparent;
 }
 
+.abs-month {
+  position: absolute;
+  top: 150%;
+  left: -20px;
+  width: 100px;
+
+  color: #340078;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.abs-month1 {
+  position: absolute;
+  top: 150%;
+  left: -200%;
+  width: 100px;
+
+  color: #340078;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .usr-text {
   color: #828282;
   text-align: center;
@@ -609,6 +637,34 @@
   }
   .usr-btm-right img {
     width: 80px;
+  }
+  .abs-month {
+    position: absolute;
+    top: -120%;
+    left: -180%;
+    width: 100px;
+
+    color: #340078;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .abs-month1 {
+    position: absolute;
+    top: 120%;
+    left: -150%;
+    width: 100px;
+
+    color: #340078;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 }
 

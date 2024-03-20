@@ -2,7 +2,9 @@ import React from "react";
 import "./Styles/Upsell.css";
 import custom from "../Assests/custom.svg";
 import allaccess from "../Assests/allaccess.svg";
+import { useNavigate } from "react-router-dom";
 const Upsell = () => {
+  const navigate = useNavigate()
   return (
     <div className="ups-cont">
       <div className="ups-head">Embark on an Empowering Journey</div>
@@ -108,7 +110,7 @@ const Upsell = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn">Know More</div>
+            <div className="ups-btn" onClick={() => navigate("/custompack")}>Know More</div>
           </div>
         </div>
 
@@ -212,7 +214,7 @@ const Upsell = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn">Know More</div>
+            <div className="ups-btn" onClick={() => navigate("/allaccess")}>Know More</div>
           </div>
         </div>
 

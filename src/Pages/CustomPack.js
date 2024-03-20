@@ -10,11 +10,16 @@ import EmbarkJourney from "../Components/CustomPack/EmbarkJourney";
 import IntroFooter from "../Components/IntroFooter";
 import IntroFaq from "../Components/IntroFaq";
 import FloatSelected from "../Components/CustomPack/FloatSelected";
+import SignUp from "../Components/SignUp";
+import Login from "../Components/Login";
+import Cookies from "js-cookie";
 
 const CustomPack = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSign, setShowSign] = useState(false);
   const customSlideToExploreRef = useRef(null);
-  const [selectedCourse, setSelectedCourses] = useState([]);
+  // const [selectedCourse, setSelectedCourses] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +40,20 @@ const CustomPack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const email = Cookies.get("user_email");
+    const name = Cookies.get("user_name");
+    if (!email || !name) {
+      setShowLogin(true);
+    }
+  }, []);
+
+  if (showSign)
+    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
+
+  if (showLogin)
+    return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -64,25 +83,19 @@ const CustomPack = () => {
   ];
   return (
     <div>
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
       <CustomHero />
       <Customhow />
       <div ref={customSlideToExploreRef}>
         <CustomSlideToExplore />
       </div>
       <UnderStandRefund />
-      <SuggestedCoursePack
-        setSelectedCourses={setSelectedCourses}
-        selectedCourses={selectedCourse}
-      />
-      <ChooseCourse
-        setSelectedCourses={setSelectedCourses}
-        selectedCourse={selectedCourse}
-      />
+      <SuggestedCoursePack />
+      <ChooseCourse />
       <EmbarkJourney />
       <IntroFaq customFaq={query} />
       <IntroFooter />
-      {showFloatSelected && <FloatSelected selectedCourse={selectedCourse} />}
+      {showFloatSelected && <FloatSelected />}
     </div>
   );
 };

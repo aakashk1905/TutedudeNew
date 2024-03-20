@@ -16,7 +16,7 @@ import { EffectCube, Pagination } from "swiper/modules";
 const Customhow = () => {
   return (
     <div className="chow-cont">
-      <div className="hr-head">How it works?</div>
+      <div className="hr-head">How Refund works?</div>
       <div className="chr-inner-cont">
         <div className="chow-cards-cont">
           <div className="chow-card">
@@ -29,7 +29,7 @@ const Customhow = () => {
             <img src={chow2} alt="chow1"></img>
             <span>
               complete every single course at your own pace & keep on Getting
-              <b style={{ color: "#5B00D1" }}> Refund of Rs. 375</b> for each
+              <b style={{ color: "#5B00D1" }}> Refund of Rs. 200</b> for each
               course.
             </span>
           </div>

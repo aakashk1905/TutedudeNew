@@ -13,7 +13,8 @@ const Whyus = () => {
           Why Choose <b className="home-hr-head-col">US?</b>
         </div>
         <div className="home-wu-text">
-          Get Free mentorship, hands-on internships, and a supportive community.{" "}
+          Get instant Mentorship, internship opportunities and a supportive
+          learning community.
         </div>
       </div>
       <div className="home-wu-btm">
@@ -32,7 +33,9 @@ const Whyus = () => {
           </div>
         </div>
         <div
-          className={`home-wu-card home-wu-card2 ${active === 2 && "home-wu-card-active2"}`}
+          className={`home-wu-card home-wu-card2 ${
+            active === 2 && "home-wu-card-active2"
+          }`}
           onClick={() => setActive(2)}
         >
           <div className="home-wu-img-cont">
@@ -47,7 +50,9 @@ const Whyus = () => {
           </div>
         </div>
         <div
-          className={`home-wu-card home-wu-card3 ${active === 3 && "home-wu-card-active3"}`}
+          className={`home-wu-card home-wu-card3 ${
+            active === 3 && "home-wu-card-active3"
+          }`}
           onClick={() => setActive(3)}
         >
           <div className="home-wu-img-cont">
@@ -61,7 +66,9 @@ const Whyus = () => {
           </div>
         </div>
         <div
-          className={`home-wu-card home-wu-card4 ${active === 4 && "home-wu-card-active4"}`}
+          className={`home-wu-card home-wu-card4 ${
+            active === 4 && "home-wu-card-active4"
+          }`}
           onClick={() => setActive(4)}
         >
           <div className="home-wu-img-cont">

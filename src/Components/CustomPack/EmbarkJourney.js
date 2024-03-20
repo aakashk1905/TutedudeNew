@@ -1,7 +1,9 @@
 import React from "react";
 import "./styles/EmbarkJourney.css";
 import allaccess from "../../Assests/allaccess.svg";
+import { useNavigate } from "react-router-dom";
 const TickSvg = () => {
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +27,7 @@ const TickSvg = () => {
   );
 };
 const EmbarkJourney = () => {
+  const navigate = useNavigate();
   return (
     <div className="ej-cont">
       <div className="usr-head">Embark on an Empowering Journey!!</div>
@@ -85,7 +88,9 @@ const EmbarkJourney = () => {
             </div>
           </div>
         </div>
-        <div className="ej-card-cta">Know More</div>
+        <div className="ej-card-cta" onClick={() => navigate("/allaccess")}>
+          Know More
+        </div>
       </div>
       <div className="ej-ups-cont">
         <div className="ups-card">
@@ -188,7 +193,7 @@ const EmbarkJourney = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn">Know More</div>
+            <div className="ups-btn" onClick={() => navigate("/allaccess")}>Know More</div>
           </div>
         </div>
       </div>

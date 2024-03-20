@@ -17,6 +17,7 @@ const CustomHero = () => {
             <b style={{ color: "#3CAE42" }}>100% Refund validity</b> with each
             course pack
           </div>
+          <div className="home-hero-cta">Enroll Now</div>
         </div>
         <div className="custom-right">
           <img src={customheroright} alt="customright"></img>

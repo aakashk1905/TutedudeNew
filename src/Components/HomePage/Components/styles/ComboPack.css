@@ -163,7 +163,7 @@
 .cp-km {
   border-radius: 100px;
   border: 1px solid #7530e4;
-  background: #fff;
+  background: #7530e4;
   box-shadow: 0px 4px 13px 0px rgba(117, 48, 228, 0.11);
 
   display: flex;
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 10px;
 
-  color: #5b00d1;
+  color: #fff;
   font-family: "DM Sans";
   font-size: 20px;
   font-style: normal;
@@ -249,7 +249,7 @@
   .cp-chk {
     font-size: 20px;
   }
-  .cp-cont{
+  .cp-cont {
     padding: 20px 0;
   }
 }
@@ -276,7 +276,7 @@
   .cp-chk {
     font-size: 16px;
   }
-  .cp-cont{
+  .cp-cont {
     padding: 20px 0;
   }
 }

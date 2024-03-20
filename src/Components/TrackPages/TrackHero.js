@@ -23,7 +23,7 @@ const TrackHero = () => {
               An <b>IIT Delhi</b> Alumni Initiative
             </div>
             <div className="home-hero-head">
-              Learn Full Stack Web Development with{" "}
+              Master Full Stack Web Development with{" "}
               <b
                 style={{
                   background:
@@ -37,10 +37,10 @@ const TrackHero = () => {
               </b>
             </div>
 
-            <div className="home-hero-text">
+            {/* <div className="home-hero-text">
               Learn Full Stack Web Development through our comprehensive course,
               complete with a guaranteed internship opportunity.
-            </div>
+            </div> */}
             <img
               src={googlereview}
               alt="google-review"

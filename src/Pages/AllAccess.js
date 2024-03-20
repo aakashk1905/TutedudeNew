@@ -8,9 +8,14 @@ import AllChooseCourse from "../Components/AllAccess/AllChooseCourse";
 import IntroFaq from "../Components/IntroFaq";
 import IntroFooter from "../Components/IntroFooter";
 import AllFloatSelected from "../Components/AllAccess/AllFloatSelected";
+import SignUp from "../Components/SignUp";
+import Login from "../Components/Login";
+import Cookies from "js-cookie";
 
 const AllAccess = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSign, setShowSign] = useState(false);
   const customSlideToExploreRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +37,20 @@ const AllAccess = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const email = Cookies.get("user_email");
+    const name = Cookies.get("user_name");
+    if (!email || !name) {
+      setShowLogin(true);
+    }
+  }, []);
+
+  if (showSign)
+    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
+
+  if (showLogin)
+    return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -61,14 +80,13 @@ const AllAccess = () => {
   ];
   return (
     <div>
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
       <AllAccessHero />
       <DiscoverAllAccess />
-
+      <Customhow />
       <div ref={customSlideToExploreRef}>
         <AllAccessBenefits />
       </div>
-      <Customhow />
 
       <AllChooseCourse />
 

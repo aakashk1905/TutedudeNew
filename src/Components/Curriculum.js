@@ -7,87 +7,6 @@ import Cookies from "js-cookie";
 const Curriculum = ({ bought, setShowLogin, details, topics2, topics1 }) => {
   const name = Cookies.get("user_name");
   const [viewMore, setViewMore] = useState(false);
-  // const topics1 = [
-  //   {
-  //     section_name: "Introduction",
-  //     section_lectures: ["Introduction"],
-  //   },
-  //   {
-  //     section_name: "Introduction to figma",
-  //     section_lectures: [
-  //       "INTRODUCING FIGMA",
-  //       "figma dashboard",
-  //       "figma tools",
-  //       "layers and pages",
-  //       "the top bar",
-  //       "design properties",
-  //       "prototyping in figma",
-  //       "Exercise creating a responsive layout",
-  //     ],
-  //   },
-  //   {
-  //     section_name: "Sketching",
-  //     section_lectures: [
-  //       "Introduction to sketching",
-  //       "The sketching process",
-  //       "Sketching user flows",
-  //       "Sketching user flows 2",
-  //       "Sketching user flows 3",
-  //       "Sketching user flows 4",
-  //       "Sketching tips",
-  //     ],
-  //   },
-
-  //   {
-  //     section_name: "User flows",
-  //     section_lectures: [
-  //       "The Do's and Dont's",
-  //       "Speedup workflow with components",
-  //       "Creating own user flows.",
-  //       "Creating own user flows 2",
-  //       "Creating own userflows 3",
-  //     ],
-  //   },
-  // ];
-
-  // const topics2 = [
-  //   {
-  //     section_name: "Design Patterns",
-  //     section_lectures: [
-  //       "What are design patterns",
-  //       "Why are design patterns so valuable",
-  //       "How to apply design patterns",
-  //       "Analyzing design patterns",
-  //       "Analyzing, Dissecting, and choosing design patterns",
-  //     ],
-  //   },
-  //   {
-  //     section_name: "Mobile Design",
-  //     section_lectures: [
-  //       "Mobile design best practices",
-  //       "Best practice part 2",
-  //     ],
-  //   },
-  //   {
-  //     section_name: "Visual style + Exploration",
-  //     section_lectures: [
-  //       "Design fidelity",
-  //       "Style Exploration",
-  //       "Style Exploration 2",
-  //       "Style Exploration 3",
-  //       "Style Exploration 4",
-  //     ],
-  //   },
-  //   {
-  //     section_name: "Motion",
-  //     section_lectures: [
-  //       "Importance of motion",
-  //       "The purpose of motion",
-  //       "Intro to smart animate",
-  //       "The power of smart animate",
-  //     ],
-  //   },
-  // ];
 
   return (
     <div className="icurr-cont">
@@ -208,6 +127,7 @@ const LectrureList = ({ topic, ind }) => {
             height="48"
             viewBox="0 0 48 48"
             fill="none"
+            className={`${topicClicked ? "invert" : ""}`}
           >
             <path
               d="M43.9999 19.9999C43.219 19.219 41.9529 19.219 41.1719 19.9999L35.4142 25.7577C34.6331 26.5388 33.3668 26.5388 32.5857 25.7577L26.8279 19.9999C26.047 19.219 24.7809 19.219 23.9999 19.9999C23.219 20.7809 23.219 22.047 23.9999 22.8279L32.5857 31.4137C33.3668 32.1948 34.6331 32.1948 35.4142 31.4137L43.9999 22.8279C44.7809 22.047 44.7809 20.7809 43.9999 19.9999Z"

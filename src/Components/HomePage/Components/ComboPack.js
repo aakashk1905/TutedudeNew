@@ -1,7 +1,9 @@
 import React from "react";
 import "./styles/ComboPack.css";
 import tick from "../Assests/tick.svg";
+import { useNavigate } from "react-router-dom";
 const ComboPack = () => {
+  const navigate = useNavigate();
   return (
     <div className="cp-cont">
       <div className="cp-inner-cont">
@@ -15,7 +17,7 @@ const ComboPack = () => {
           </div>
         </div>
         <div className="cp-cards-cont">
-          <div className="cp-card1">
+          <div className="cp-card1" onClick={() => navigate("/custompack")}>
             <div className="cp-card1-top">
               <div className="cp-head">
                 <div>Customized Pack</div>
@@ -54,13 +56,13 @@ const ComboPack = () => {
               >
                 <path
                   d="M14 1L1 14M3.03535 1H14V11.9646"
-                  stroke="#5B00D1"
+                  stroke="#fff"
                   strokeWidth="2"
                 />
               </svg>
             </div>
           </div>
-          <div className="cp-card2">
+          <div className="cp-card2" onClick={() => navigate("/allaccess")}>
             <div className="cp-card1-top">
               <div className="cp-head">
                 <div>All Access Pack</div>
@@ -99,7 +101,7 @@ const ComboPack = () => {
               >
                 <path
                   d="M14 1L1 14M3.03535 1H14V11.9646"
-                  stroke="#5B00D1"
+                  stroke="#fff"
                   strokeWidth="2"
                 />
               </svg>

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./styles/FloatSelected.css";
-const FloatSelected = ({ selectedCourse }) => {
+import useCart from "../../contexts/Cart";
+import { useNavigate } from "react-router-dom";
+const FloatSelected = () => {
   const [price, setPrice] = useState(0);
-
+  const { selectedCourse } = useCart();
+  const navigate = useNavigate();
   useEffect(() => {
     if (selectedCourse?.length !== 0) {
       let newPrice;
@@ -21,13 +24,15 @@ const FloatSelected = ({ selectedCourse }) => {
       <div className="float-s-inner-cont">
         <div className="flc-course-cont">
           {selectedCourse?.length}
-          <span>Courses</span>
+          <span>Selected Courses</span>
         </div>
         <div className="flc-price-cont">
-          {price} <span>Total</span>
+          ₹ {price} <span>Total Price</span>
         </div>
         {selectedCourse?.length > 0 ? (
-          <div className="flc-cta">Continue</div>
+          <div className="flc-cta" onClick={() => navigate("/payment")}>
+            Proceed
+          </div>
         ) : (
           <div className="flc-cta">Add Course</div>
         )}

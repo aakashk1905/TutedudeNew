@@ -27,51 +27,17 @@ const UnderStandRefund = () => {
         </div>
         <div className="usr-card-mid">
           <div className="usr-card-inner-mid">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="20"
-              viewBox="0 0 23 20"
-              fill="none"
-            >
-              <ellipse cx="11.5" cy="10" rx="11.5" ry="10" fill="#A25AFF" />
-            </svg>
-            <div className="usr-tick-cont">
-              <div className="usr-tick-top">
-                1st course completed
-                <span>(In any no. of months)</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="46"
-                  height="29"
-                  viewBox="0 0 46 29"
-                  fill="none"
-                  className="usr-tri"
-                >
-                  <path
-                    d="M22.9075 28.4375L0.469772 0.358797H45.3453L22.9075 28.4375Z"
-                    fill="#FFEDED"
-                  />
-                </svg>
-              </div>
-              <TickSvg />
-              <div className="usr-tick-btm">
-                ₹375
-                <span>Refund collected</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="26"
-                  height="21"
-                  viewBox="0 0 26 21"
-                  fill="none"
-                  className="usr-btm-tri"
-                >
-                  <path
-                    d="M13 0L25.9904 20.25H0.00961876L13 0Z"
-                    fill="#F1F8F1"
-                  />
-                </svg>
-              </div>
+            <div style={{ position: "relative" }}>
+              <div className="abs-month">0 Months</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="20"
+                viewBox="0 0 23 20"
+                fill="none"
+              >
+                <ellipse cx="11.5" cy="10" rx="11.5" ry="10" fill="#A25AFF" />
+              </svg>
             </div>
             <div className="usr-tick-cont">
               <div className="usr-tick-top">
@@ -184,15 +150,55 @@ const UnderStandRefund = () => {
                 </svg>
               </div>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="20"
-              viewBox="0 0 23 20"
-              fill="none"
-            >
-              <ellipse cx="11.5" cy="10" rx="11.5" ry="10" fill="#A25AFF" />
-            </svg>
+            <div className="usr-tick-cont">
+              <div className="usr-tick-top">
+                1st course completed
+                <span>(In any no. of months)</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="46"
+                  height="29"
+                  viewBox="0 0 46 29"
+                  fill="none"
+                  className="usr-tri"
+                >
+                  <path
+                    d="M22.9075 28.4375L0.469772 0.358797H45.3453L22.9075 28.4375Z"
+                    fill="#FFEDED"
+                  />
+                </svg>
+              </div>
+              <TickSvg />
+              <div className="usr-tick-btm">
+                ₹375
+                <span>Refund collected</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="21"
+                  viewBox="0 0 26 21"
+                  fill="none"
+                  className="usr-btm-tri"
+                >
+                  <path
+                    d="M13 0L25.9904 20.25H0.00961876L13 0Z"
+                    fill="#F1F8F1"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div style={{ position: "relative" }}>
+              <div className="abs-month1">12 Months</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="20"
+                viewBox="0 0 23 20"
+                fill="none"
+              >
+                <ellipse cx="11.5" cy="10" rx="11.5" ry="10" fill="#A25AFF" />
+              </svg>
+            </div>
           </div>
         </div>
         <div className="usr-card-btm">

@@ -1,8 +1,10 @@
 import React from "react";
 import "./styles/Coursecard.css";
-const Coursecard = ({ cimg, text, col, bg }) => {
+import { useNavigate } from "react-router-dom";
+const Coursecard = ({ cimg, text, col, bg, slug }) => {
+  const navigate = useNavigate();
   return (
-    <div className="cc-cont">
+    <div className="cc-cont" onClick={() => navigate(`/${slug}`)}>
       <div className="cc-left">
         <img src={cimg} alt="card"></img>
         <div>{text}</div>

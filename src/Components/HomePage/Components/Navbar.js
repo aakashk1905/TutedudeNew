@@ -21,31 +21,31 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
 
   return (
     <>
-      <div className="navbar-outer-cont">
-        <div className="nav-cont">
+      <div className="home-navbar-outer-cont">
+        <div className="home-nav-cont">
           <div className="logo-cont">
             <img src={logo} alt="Logo" />{" "}
           </div>
-          <div className="nav-links-cont">
-            <div className="nav-links-list-item"> Home</div>
+          <div className="home-nav-links-cont" style={{display:"none"}}>
+            <div className="home-nav-links-list-item"> Home</div>
 
             <a href="#abt">
-              <div className="nav-links-list-item">Courses</div>
+              <div className="home-nav-links-list-item">Courses</div>
             </a>
-            <div className="nav-links-list-item">Feesback Offer</div>
-            <div className="nav-links-list-item"> FAQ'S</div>
+            <div className="home-nav-links-list-item">Feesback Offer</div>
+            <div className="home-nav-links-list-item"> FAQ'S</div>
           </div>
           {name ? (
-            <div className="nav-btn-cont nav-btn-contt">
-              <div className="nav-login-btn logbtn">{name}</div>
-              <div className="nav-logout-btn logbtn" onClick={handleLogout}>
+            <div className="home-nav-btn-cont nav-btn-contt">
+              <div className="home-nav-login-btn logbtn">{name}</div>
+              <div className="home-nav-logout-btn logbtn" onClick={handleLogout}>
                 Logout
               </div>
             </div>
           ) : (
-            <div className="nav-btn-cont nav-btn-contt">
+            <div className="home-nav-btn-cont nav-btn-contt">
               <div
-                className="nav-login-btn logbtn"
+                className="home-nav-login-btn logbtn"
                 onClick={() => {
                   setShowSign(false);
                   setShowLogin(true);
@@ -54,7 +54,7 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
                 Login
               </div>
               <div
-                className="nav-signup-btn signbtn"
+                className="home-nav-signup-btn signbtn"
                 onClick={() => {
                   setShowLogin(false);
                   setShowSign(true);
@@ -71,7 +71,7 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
       </div>
       {open && (
         <div className="mnav-cont">
-          <div className="nav-cont">
+          <div className="home-nav-cont">
             <div className="logo-cont">
               <img src={logo} alt="Logo" />{" "}
             </div>
@@ -81,22 +81,22 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
           </div>
 
           <div className="mnav-inner-cont">
-            <div className="nav-links-list-item"> Home</div>
-            <div className="nav-links-list-item">Courses</div>
-            <div className="nav-links-list-item">Feesback Offer</div>
-            <div className="nav-links-list-item">FAQ'S</div>
+            <div className="home-nav-links-list-item"> Home</div>
+            <div className="home-nav-links-list-item">Courses</div>
+            <div className="home-nav-links-list-item">Feesback Offer</div>
+            <div className="home-nav-links-list-item">FAQ'S</div>
 
             {name ? (
               <div>
-                <div className="nav-login-btn">{name} </div>
-                <div className="nav-logout-btn" onClick={handleLogout}>
+                <div className="home-nav-login-btn">{name} </div>
+                <div className="home-nav-logout-btn" onClick={handleLogout}>
                   Logout
                 </div>
               </div>
             ) : (
               <>
                 <div
-                  className="nav-login-btn"
+                  className="home-nav-login-btn"
                   onClick={() => {
                     setOpen(false);
                     setShowSign(false);
@@ -106,7 +106,7 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
                   Login
                 </div>
                 <div
-                  className="nav-signup-btn"
+                  className="home-nav-signup-btn"
                   onClick={() => {
                     setOpen(false);
                     setShowLogin(false);

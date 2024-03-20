@@ -16,6 +16,7 @@ const AllAccessHero = () => {
             Elevate your skills at an unbeatable price
             <b style={{ color: "#3CAE42" }}> just ₹4,499!</b>
           </div>
+          <div className="home-hero-cta">Enroll Now</div>
         </div>
         <div className="custom-right">
           <img src={customheroright} alt="customright"></img>

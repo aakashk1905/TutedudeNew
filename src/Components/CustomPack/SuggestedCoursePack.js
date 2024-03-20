@@ -5,7 +5,9 @@ import financeguru from "../../Assests/financeguru.png";
 import techallround from "../../Assests/techallrounder.png";
 import techpro from "../../Assests/techpro.png";
 import scprefundabs from "../../Assests/scprefundabs.svg";
-const SuggestedCoursePack = ({ setSelectedCourses, selectedCourses }) => {
+import useCart from "../../contexts/Cart";
+const SuggestedCoursePack = () => {
+  const { setSelectedCourse } = useCart();
   const containerRef = useRef(null);
   const [dragStartX, setDragStartX] = useState(null);
 
@@ -209,7 +211,7 @@ const SuggestedCoursePack = ({ setSelectedCourses, selectedCourses }) => {
             <div
               className="scp-cta"
               onClick={() => {
-                setSelectedCourses((ssc) => {
+                setSelectedCourse((ssc) => {
                   const updatedCourses = [...ssc];
 
                   sc.content.forEach((item) => {

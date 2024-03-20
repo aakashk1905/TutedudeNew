@@ -5,8 +5,8 @@ const WhyRefund = () => {
   return (
     <div className="why-cont">
       <div className="why-upper-cont">
-      <div className="yellow"></div>
-      <div className="green"></div>
+        <div className="yellow"></div>
+        <div className="green"></div>
         <div className="why-head">Why refund?</div>
         <div className="why-img-cont">
           <img src={whyref} alt="whyref" />
@@ -18,7 +18,13 @@ const WhyRefund = () => {
           <div className="why-quote2">“</div>
         </div>
       </div>
-      <div className="why-video-cont"></div>
+      <div className="why-video-cont">
+        <video
+          src="https://d1nyzl35ecsrcr.cloudfront.net/tdmw/refundvideo.mp4"
+          alt="refund Video"
+          controls
+        />
+      </div>
     </div>
   );
 };

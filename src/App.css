@@ -4,6 +4,15 @@
 *::-webkit-scrollbar {
   display: none;
 }
-*{
+* {
   box-sizing: border-box;
+}
+
+@keyframes glare {
+  0% {
+    left: -135%;
+  }
+  100% {
+    left: 130%;
+  }
 }

@@ -8,10 +8,10 @@ import hero2 from "../Assests/hero2.png";
 import hero3 from "../Assests/hero3.png";
 import hero4 from "../Assests/hero4.png";
 import googlereview from "../Assests/googlereview.svg";
-const Hero = () => {
+const Hero = ({ setShowLogin, setShowSign }) => {
   return (
     <div className="home-hero-cont">
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
       <div className="home-hero-banner">
         Learn risk-free with Tutedude! Enjoy 100% refund on course completion
       </div>
@@ -24,7 +24,11 @@ const Hero = () => {
             <div className="home-hero-head">
               <p className="home-hero-head-col">
                 Level Up
-                <img src={levelup} alt="levelup" className="home-hero-levelup" />
+                <img
+                  src={levelup}
+                  alt="levelup"
+                  className="home-hero-levelup"
+                />
               </p>
               Your career with expert mentorship & internships for{" "}
               <span className="home-hero-free">FREE</span>

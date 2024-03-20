@@ -71,7 +71,9 @@
   /* justify-content: center; */
   align-items: center;
 }
-
+.tm-pro-cont img {
+  border-radius: 50%;
+}
 .tm-card-head1 {
   color: #697781;
   font-family: "DM Sans";
@@ -95,8 +97,8 @@
   .tm-text {
     width: 75%;
   }
-  .tm-cont{
-    gap:30px
+  .tm-cont {
+    gap: 30px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -133,7 +135,6 @@
     display: flex;
     gap: 20px;
     overflow: scroll;
-    
   }
 
   .tm-card {

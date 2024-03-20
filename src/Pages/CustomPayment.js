@@ -8,9 +8,9 @@ import "./Payment.css";
 import contents from "../contents/Contents.json";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useParams } from "react-router-dom";
-const Payment = () => {
-  const { slug } = useParams();
+
+import useCart from "../contexts/Cart";
+const CustomPayment = () => {
   const [name, setName] = useState("Aakash");
   const [email, setEmail] = useState("rockingak187@gmail.com");
 
@@ -18,7 +18,7 @@ const Payment = () => {
     const name = Cookies.get("user_name");
     const email = Cookies.get("user_email");
     if (!name || !email) {
-      window.location.href = "https://upskill.tutedude.com/category/uiux";
+      // window.location.href = "https://upskill.tutedude.com/category/uiux";
     } else {
       setName(name);
       setEmail(email);
@@ -30,6 +30,8 @@ const Payment = () => {
   const [discount, setDiscount] = useState(0);
   const [coupon, setCoupon] = useState("");
   const [applied, setApplied] = useState(false);
+
+  const { selectedCourse } = useCart();
 
   var coupons = {
     OFF200: 200,
@@ -120,7 +122,6 @@ const Payment = () => {
 
   return (
     <div className="pmt-cont">
-      {/* {console.log(selectedCourse, slug)} */}
       <div className="pmt-nav">
         <div className="pmt-logo-cont">
           <img src={logo} alt="Logo" />
@@ -218,74 +219,85 @@ const Payment = () => {
         <div className="pmt-left-cont">
           <div className="pmt-left-card-cont">
             <div className="pmt-left-head">Purchase summary </div>
-            <div className="pmt-summary-cont">
-              <div className="pmt-summary-img-cont">
-                <img src={pmtuiux} alt="pmtuiux"></img>
-              </div>
-              <div className="pmt-summary-right-cont">
-                <div className="pmt-course-head-cont">
-                  <div className="pmt-course-head">{contents[slug]?.name}</div>
-                  <div className="pmt-course-text">Rs. 699</div>
-                </div>
-                <div className="pmt-course-desc">
-                  {contents[slug]?.paymentInfo}
-                </div>
-                <div className="pmt-course-det-cont">
-                  <div className="pmt-course-det">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="17"
-                      viewBox="0 0 16 17"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_724_1931)">
-                        <path
-                          d="M12.3333 16.5H3.66667C2.69453 16.4989 1.76252 16.1123 1.07511 15.4249C0.387707 14.7375 0.00105878 13.8055 0 12.8333L0 4.16667C0.00105878 3.19453 0.387707 2.26252 1.07511 1.57511C1.76252 0.887707 2.69453 0.501059 3.66667 0.5L12.3333 0.5C13.3055 0.501059 14.2375 0.887707 14.9249 1.57511C15.6123 2.26252 15.9989 3.19453 16 4.16667V12.8333C15.9989 13.8055 15.6123 14.7375 14.9249 15.4249C14.2375 16.1123 13.3055 16.4989 12.3333 16.5ZM3.66667 2.5C3.22464 2.5 2.80072 2.67559 2.48816 2.98816C2.17559 3.30072 2 3.72464 2 4.16667V12.8333C2 13.2754 2.17559 13.6993 2.48816 14.0118C2.80072 14.3244 3.22464 14.5 3.66667 14.5H12.3333C12.7754 14.5 13.1993 14.3244 13.5118 14.0118C13.8244 13.6993 14 13.2754 14 12.8333V4.16667C14 3.72464 13.8244 3.30072 13.5118 2.98816C13.1993 2.67559 12.7754 2.5 12.3333 2.5H3.66667ZM5.328 6.726V10.274C5.328 10.4301 5.369 10.5835 5.4469 10.7187C5.52479 10.854 5.63684 10.9665 5.77185 11.0448C5.90685 11.1232 6.06007 11.1648 6.21617 11.1653C6.37227 11.1659 6.52578 11.1254 6.66133 11.048L10.2127 9.274C10.3491 9.19605 10.4626 9.08341 10.5415 8.94748C10.6204 8.81155 10.662 8.65717 10.662 8.5C10.662 8.34283 10.6204 8.18845 10.5415 8.05252C10.4626 7.91659 10.3491 7.80395 10.2127 7.726L6.66133 5.952C6.52578 5.87459 6.37227 5.83414 6.21617 5.8347C6.06007 5.83525 5.90685 5.87679 5.77185 5.95516C5.63684 6.03353 5.52479 6.14598 5.4469 6.28126C5.369 6.41654 5.328 6.5699 5.328 6.726Z"
-                          fill="#AE7CFF"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_724_1931">
-                          <rect
+            <div className="pmt-cards-cont">
+              {selectedCourse &&
+                selectedCourse.map((course, ind) => (
+                  <div className="pmt-summary-cont" key={ind}>
+                    <div className="pmt-summary-img-cont">
+                      <img src={pmtuiux} alt="pmtuiux"></img>
+                    </div>
+                    <div className="pmt-summary-right-cont">
+                      <div className="pmt-course-head-cont">
+                        <div className="pmt-course-head">
+                          {contents[course.slug]?.name}
+                        </div>
+                        <div className="pmt-course-text">Rs. 699</div>
+                      </div>
+                      <div className="pmt-course-desc">
+                        {contents[course.slug]?.paymentInfo}
+                      </div>
+                      <div className="pmt-course-det-cont">
+                        <div className="pmt-course-det">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_724_1931)">
+                              <path
+                                d="M12.3333 16.5H3.66667C2.69453 16.4989 1.76252 16.1123 1.07511 15.4249C0.387707 14.7375 0.00105878 13.8055 0 12.8333L0 4.16667C0.00105878 3.19453 0.387707 2.26252 1.07511 1.57511C1.76252 0.887707 2.69453 0.501059 3.66667 0.5L12.3333 0.5C13.3055 0.501059 14.2375 0.887707 14.9249 1.57511C15.6123 2.26252 15.9989 3.19453 16 4.16667V12.8333C15.9989 13.8055 15.6123 14.7375 14.9249 15.4249C14.2375 16.1123 13.3055 16.4989 12.3333 16.5ZM3.66667 2.5C3.22464 2.5 2.80072 2.67559 2.48816 2.98816C2.17559 3.30072 2 3.72464 2 4.16667V12.8333C2 13.2754 2.17559 13.6993 2.48816 14.0118C2.80072 14.3244 3.22464 14.5 3.66667 14.5H12.3333C12.7754 14.5 13.1993 14.3244 13.5118 14.0118C13.8244 13.6993 14 13.2754 14 12.8333V4.16667C14 3.72464 13.8244 3.30072 13.5118 2.98816C13.1993 2.67559 12.7754 2.5 12.3333 2.5H3.66667ZM5.328 6.726V10.274C5.328 10.4301 5.369 10.5835 5.4469 10.7187C5.52479 10.854 5.63684 10.9665 5.77185 11.0448C5.90685 11.1232 6.06007 11.1648 6.21617 11.1653C6.37227 11.1659 6.52578 11.1254 6.66133 11.048L10.2127 9.274C10.3491 9.19605 10.4626 9.08341 10.5415 8.94748C10.6204 8.81155 10.662 8.65717 10.662 8.5C10.662 8.34283 10.6204 8.18845 10.5415 8.05252C10.4626 7.91659 10.3491 7.80395 10.2127 7.726L6.66133 5.952C6.52578 5.87459 6.37227 5.83414 6.21617 5.8347C6.06007 5.83525 5.90685 5.87679 5.77185 5.95516C5.63684 6.03353 5.52479 6.14598 5.4469 6.28126C5.369 6.41654 5.328 6.5699 5.328 6.726Z"
+                                fill="#AE7CFF"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_724_1931">
+                                <rect
+                                  width="16"
+                                  height="16"
+                                  fill="white"
+                                  transform="translate(0 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                          <span>
+                            {contents[course.slug]?.details?.lectures} Lectures
+                          </span>
+                        </div>
+                        <div className="pmt-course-det">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
-                            fill="white"
-                            transform="translate(0 0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span>{contents[slug]?.details?.lectures} Lectures</span>
+                            viewBox="0 0 16 16"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_1379_2957)">
+                              <path
+                                d="M8 0C6.41775 0 4.87104 0.469192 3.55544 1.34824C2.23985 2.22729 1.21447 3.47672 0.608967 4.93853C0.00346629 6.40034 -0.15496 8.00887 0.153721 9.56072C0.462403 11.1126 1.22433 12.538 2.34315 13.6569C3.46197 14.7757 4.88743 15.5376 6.43928 15.8463C7.99113 16.155 9.59966 15.9965 11.0615 15.391C12.5233 14.7855 13.7727 13.7602 14.6518 12.4446C15.5308 11.129 16 9.58225 16 8C15.9977 5.87897 15.1541 3.84547 13.6543 2.34568C12.1545 0.845886 10.121 0.00229405 8 0V0ZM8 14C6.81332 14 5.65328 13.6481 4.66658 12.9888C3.67989 12.3295 2.91085 11.3925 2.45673 10.2961C2.0026 9.19975 1.88378 7.99335 2.11529 6.82946C2.3468 5.66557 2.91825 4.59647 3.75736 3.75736C4.59648 2.91824 5.66558 2.3468 6.82946 2.11529C7.99335 1.88378 9.19975 2.0026 10.2961 2.45672C11.3925 2.91085 12.3295 3.67988 12.9888 4.66658C13.6481 5.65327 14 6.81331 14 8C13.9982 9.59076 13.3655 11.1159 12.2407 12.2407C11.1159 13.3655 9.59076 13.9982 8 14Z"
+                                fill="#A66FFF"
+                              />
+                              <path
+                                d="M6.99903 7.3703L5.39903 8.3703C5.28769 8.44001 5.19117 8.53097 5.115 8.63799C5.03882 8.74501 4.98447 8.866 4.95507 8.99403C4.92566 9.12206 4.92177 9.25463 4.94361 9.38416C4.96545 9.5137 5.0126 9.63766 5.08237 9.74897C5.15207 9.86031 5.24304 9.95682 5.35006 10.033C5.45708 10.1092 5.57806 10.1635 5.70609 10.1929C5.83412 10.2223 5.96669 10.2262 6.09623 10.2044C6.22576 10.1825 6.34972 10.1354 6.46103 10.0656L8.3737 8.86563C8.5656 8.74538 8.72371 8.57823 8.83312 8.37994C8.94253 8.18165 8.99963 7.95877 8.99903 7.7323V5.18164C8.99903 4.91642 8.89368 4.66207 8.70614 4.47453C8.5186 4.287 8.26425 4.18164 7.99903 4.18164C7.73382 4.18164 7.47946 4.287 7.29193 4.47453C7.10439 4.66207 6.99903 4.91642 6.99903 5.18164V7.3703Z"
+                                fill="#A66FFF"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_1379_2957">
+                                <rect width="16" height="16" fill="white" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                          <span>
+                            {contents[course.slug]?.details?.duration} Duration
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="pmt-course-det">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_1379_2957)">
-                        <path
-                          d="M8 0C6.41775 0 4.87104 0.469192 3.55544 1.34824C2.23985 2.22729 1.21447 3.47672 0.608967 4.93853C0.00346629 6.40034 -0.15496 8.00887 0.153721 9.56072C0.462403 11.1126 1.22433 12.538 2.34315 13.6569C3.46197 14.7757 4.88743 15.5376 6.43928 15.8463C7.99113 16.155 9.59966 15.9965 11.0615 15.391C12.5233 14.7855 13.7727 13.7602 14.6518 12.4446C15.5308 11.129 16 9.58225 16 8C15.9977 5.87897 15.1541 3.84547 13.6543 2.34568C12.1545 0.845886 10.121 0.00229405 8 0V0ZM8 14C6.81332 14 5.65328 13.6481 4.66658 12.9888C3.67989 12.3295 2.91085 11.3925 2.45673 10.2961C2.0026 9.19975 1.88378 7.99335 2.11529 6.82946C2.3468 5.66557 2.91825 4.59647 3.75736 3.75736C4.59648 2.91824 5.66558 2.3468 6.82946 2.11529C7.99335 1.88378 9.19975 2.0026 10.2961 2.45672C11.3925 2.91085 12.3295 3.67988 12.9888 4.66658C13.6481 5.65327 14 6.81331 14 8C13.9982 9.59076 13.3655 11.1159 12.2407 12.2407C11.1159 13.3655 9.59076 13.9982 8 14Z"
-                          fill="#A66FFF"
-                        />
-                        <path
-                          d="M6.99903 7.3703L5.39903 8.3703C5.28769 8.44001 5.19117 8.53097 5.115 8.63799C5.03882 8.74501 4.98447 8.866 4.95507 8.99403C4.92566 9.12206 4.92177 9.25463 4.94361 9.38416C4.96545 9.5137 5.0126 9.63766 5.08237 9.74897C5.15207 9.86031 5.24304 9.95682 5.35006 10.033C5.45708 10.1092 5.57806 10.1635 5.70609 10.1929C5.83412 10.2223 5.96669 10.2262 6.09623 10.2044C6.22576 10.1825 6.34972 10.1354 6.46103 10.0656L8.3737 8.86563C8.5656 8.74538 8.72371 8.57823 8.83312 8.37994C8.94253 8.18165 8.99963 7.95877 8.99903 7.7323V5.18164C8.99903 4.91642 8.89368 4.66207 8.70614 4.47453C8.5186 4.287 8.26425 4.18164 7.99903 4.18164C7.73382 4.18164 7.47946 4.287 7.29193 4.47453C7.10439 4.66207 6.99903 4.91642 6.99903 5.18164V7.3703Z"
-                          fill="#A66FFF"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_1379_2957">
-                          <rect width="16" height="16" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <span>{contents[slug]?.details?.duration} Duration</span>
-                  </div>
-                </div>
-              </div>
+                ))}
             </div>
             <div className="pmt-rzp-footer-cont">
               <img src={razorpay} alt="razorpay" />
@@ -361,7 +373,13 @@ const Payment = () => {
                 setOnit(2);
 
                 window.fbq("track", " InitiateCheckout");
-                checkoutHandler(699 - discount, name, email, slug, coupon);
+                checkoutHandler(
+                  699 - discount,
+                  name,
+                  email,
+                  //   course.slug,
+                  coupon
+                );
               }}
             >
               Proceed to Pay
@@ -384,7 +402,8 @@ const Payment = () => {
               setOnit(2);
 
               window.fbq("track", " InitiateCheckout");
-              checkoutHandler(699 - discount, name, email, slug, coupon);
+              //   checkoutHandler(699 - discount, name, email, course.slug, coupon);
+              checkoutHandler(699 - discount, name, email, coupon);
             }}
           >
             proceed to pay
@@ -395,4 +414,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default CustomPayment;
