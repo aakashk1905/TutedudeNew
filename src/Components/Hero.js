@@ -54,9 +54,7 @@ const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
               {bought ? (
                 <div
                   className="hero-enroll-btn"
-                  onClick={() =>
-                    window.open("https://upskill.tutedude.com/dashboard")
-                  }
+                  onClick={() => window.open("https://tutedude.com/dashboard")}
                 >
                   Got to Dashboard
                 </div>

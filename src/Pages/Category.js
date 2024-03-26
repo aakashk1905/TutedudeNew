@@ -100,6 +100,7 @@ const Category = () => {
       {showLogin && (
         <Login
           setBought={setBought}
+          slug={slug}
           setShowLogin={setShowLogin}
           setShowSign={setShowSign}
         />
@@ -109,9 +110,7 @@ const Category = () => {
           {bought ? (
             <div
               className="mobile-floater-inner"
-              onClick={() =>
-                window.open("https://upskill.tutedude.com/dashboard")
-              }
+              onClick={() => window.open("https://tutedude.com/dashboard")}
             >
               Got to Dashboard
             </div>
@@ -139,7 +138,11 @@ const Category = () => {
         slug={slug}
       />
       <div ref={customSlideToExploreRef}>
-        <HowRefund bought={bought} setShowLogin={setShowLogin} />
+        <HowRefund
+          bought={bought}
+          setShowLogin={setShowLogin}
+          cname={contents[slug].title}
+        />
       </div>
       <WhyRefund />
       <UnlockCourse />
@@ -151,10 +154,9 @@ const Category = () => {
         details={contents[slug].details}
       />
       <Certificate name={contents[slug].name} />
-      {/* <CaseStudies /> */}
+
       <Upsell />
       <Experiences />
-      {/* <Reviews /> */}
       <IntroFaq />
       <IntroFooter />
     </>

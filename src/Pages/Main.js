@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import BrowseCourses from "../Components/HomePage/Components/BrowseCourses";
 import ComboPack from "../Components/HomePage/Components/ComboPack";
 import Hero from "../Components/HomePage/Components/Hero";
@@ -51,35 +51,9 @@ const Main = () => {
     },
   ];
   const customSlideToExploreRef = useRef(null);
-  const [showFloatSelected, setShowFloatSelected] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (customSlideToExploreRef.current) {
-        const customSlideToExploreRect =
-          customSlideToExploreRef.current.getBoundingClientRect();
-        const scrollPosition = window.scrollY || window.pageYOffset;
-        if (scrollPosition >= customSlideToExploreRect.top) {
-          setShowFloatSelected(true);
-        } else {
-          setShowFloatSelected(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div>
-      {showFloatSelected && (
-        <div className="mobile-floater">
-          <div className="mobile-floater-inner" onClick={()=>window.location.href="#why-refund"}>Enroll Now</div>
-        </div>
-      )}
       {showSign && (
         <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
       )}
@@ -88,7 +62,7 @@ const Main = () => {
       )}
       <Hero setShowLogin={setShowLogin} setShowSign={setShowSign} />
       <div ref={customSlideToExploreRef}>
-        <HowRefund />
+        <HowRefund cname={"Any"} />
       </div>
       <WhyRefund />
       <Whyus />

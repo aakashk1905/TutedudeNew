@@ -20,17 +20,17 @@
   width: 750px;
 }
 
-.vr-scroll-cont.active {
+/* .vr-scroll-cont.active {
   background: rgba(255, 255, 255, 0.3);
   cursor: grabbing;
   cursor: -webkit-grabbing;
-
   transform: scale(1.05);
-}
+} */
 
 .vr-scroll-cont {
   transition: all 0.2s;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   display: flex;
   gap: 20px;
   overflow: scroll;

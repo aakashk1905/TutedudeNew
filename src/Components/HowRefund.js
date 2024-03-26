@@ -4,7 +4,7 @@ import img1 from "../Assests/howcard1.svg";
 import img2 from "../Assests/howcard2.svg";
 import img3 from "../Assests/howcard3.svg";
 import Cookies from "js-cookie";
-const HowRefund = ({ bought, setShowLogin }) => {
+const HowRefund = ({ bought, setShowLogin, cname }) => {
   const name = Cookies.get("user_name");
   return (
     <div className="hr-cont">
@@ -18,7 +18,7 @@ const HowRefund = ({ bought, setShowLogin }) => {
               <img src={img1} alt="Img 1" />
             </div>
             <div className="hr-card-text">
-              Enroll into UX/UI Course by paying{" "}
+              Enroll into {cname} Course by paying{" "}
             </div>
             <div className="hr-card-price-text">Rs. 699 </div>
             {/* <div className="hr-card-btn">Enroll Now</div> */}
@@ -26,7 +26,7 @@ const HowRefund = ({ bought, setShowLogin }) => {
               <div
                 className="hr-card-btn"
                 onClick={() =>
-                  window.open("https://upskill.tutedude.com/dashboard")
+                  window.open("https://tutedude.com/dashboard")
                 }
               >
                 Got to Dashboard

@@ -9,7 +9,7 @@ import emailImg from "../Assests/email.svg";
 import pass from "../Assests/pass.svg";
 import { jwtDecode } from "jwt-decode";
 
-const Login = ({ setShowLogin, setShowSign, closeCross, setBought }) => {
+const Login = ({ setShowLogin, setShowSign, closeCross, setBought, slug }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const onLogin = (email, password) => {
@@ -31,16 +31,18 @@ const Login = ({ setShowLogin, setShowSign, closeCross, setBought }) => {
           Cookies.set("user_email", email);
           Cookies.set("user_pass", password);
 
-          if (
-            data.dashboard.courses &&
-            data.dashboard.courses.includes("uiux")
-          ) {
-            setBought(true);
-            var expirationDate = new Date();
-            expirationDate.setTime(
-              expirationDate.getTime() + 1 * 60 * 60 * 1000
-            );
-            Cookies.set("bought", true, { expires: expirationDate });
+          if (slug) {
+            if (
+              data.dashboard.courses &&
+              data.dashboard.courses.includes(slug)
+            ) {
+              setBought(true);
+              var expirationDate = new Date();
+              expirationDate.setTime(
+                expirationDate.getTime() + 1 * 60 * 60 * 1000
+              );
+              Cookies.set("bought", true, { expires: expirationDate });
+            }
           }
           Cookies.set("user_name", data.sName);
           setShowLogin(false);

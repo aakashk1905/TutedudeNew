@@ -83,7 +83,7 @@ const Curriculum = ({ bought, setShowLogin, details, topics2, topics1 }) => {
           <div
             className="curr-btn"
             onClick={() =>
-              window.open("https://upskill.tutedude.com/dashboard")
+              window.open("https://tutedude.com/dashboard")
             }
           >
             Got to Dashboard
