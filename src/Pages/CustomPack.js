@@ -4,7 +4,7 @@ import CustomHero from "../Components/CustomPack/CustomHero";
 import Customhow from "../Components/CustomPack/Customhow";
 import CustomSlideToExplore from "../Components/CustomPack/CustomSlideToExplore";
 import UnderStandRefund from "../Components/CustomPack/UnderStandRefund";
-import SuggestedCoursePack from "../Components/CustomPack/SuggestedCoursePack";
+// import SuggestedCoursePack from "../Components/CustomPack/SuggestedCoursePack";
 import ChooseCourse from "../Components/CustomPack/ChooseCourse";
 import EmbarkJourney from "../Components/CustomPack/EmbarkJourney";
 import IntroFooter from "../Components/IntroFooter";
@@ -12,14 +12,14 @@ import IntroFaq from "../Components/IntroFaq";
 import FloatSelected from "../Components/CustomPack/FloatSelected";
 import SignUp from "../Components/SignUp";
 import Login from "../Components/Login";
-import Cookies from "js-cookie";
+import { Helmet } from "react-helmet";
+// import Cookies from "js-cookie";
 
 const CustomPack = () => {
-  const [showFloatSelected, setShowFloatSelected] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
   const customSlideToExploreRef = useRef(null);
-  // const [selectedCourse, setSelectedCourses] = useState([]);
+  const [showFloatSelected, setShowFloatSelected] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,18 +42,21 @@ const CustomPack = () => {
   }, []);
 
   useEffect(() => {
-    const email = Cookies.get("user_email");
-    const name = Cookies.get("user_name");
-    if (!email || !name) {
-      setShowLogin(true);
-    }
+    window.gtag("event", "conversion", {
+      send_to: "AW-711435738/CRmfCMKls7oDENrLntMC",
+    });
+    // const email = Cookies.get("user_email");
+    // const name = Cookies.get("user_name");
+    // if (!email || !name) {
+    //   setShowLogin(true);
+    // }
   }, []);
 
-  if (showSign)
-    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
+  // if (showSign)
+  //   return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
 
-  if (showLogin)
-    return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
+  // if (showLogin)
+  //   return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -83,19 +86,28 @@ const CustomPack = () => {
   ];
   return (
     <div>
+      <Helmet>
+        <title>Customized Pack page</title>
+      </Helmet>
+      {showSign && (
+        <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
+      )}
+      {showLogin && (
+        <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
+      )}
       <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      <CustomHero />
+      <CustomHero setShowLogin={setShowLogin} />
       <Customhow />
       <div ref={customSlideToExploreRef}>
         <CustomSlideToExplore />
       </div>
       <UnderStandRefund />
-      <SuggestedCoursePack />
+      {/* <SuggestedCoursePack /> */}
       <ChooseCourse />
       <EmbarkJourney />
       <IntroFaq customFaq={query} />
       <IntroFooter />
-      {showFloatSelected && <FloatSelected />}
+      {showFloatSelected && <FloatSelected setShowLogin={setShowLogin} />}
     </div>
   );
 };

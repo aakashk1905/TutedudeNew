@@ -4,6 +4,9 @@
   --orange: rgba(209, 113, 0, 0.7);
   --blue: rgba(0, 134, 209, 0.7);
 }
+.chip-active{
+  background-color: #E4F4DE;
+}
 .bc-cont {
   display: flex;
   width: 100vw;

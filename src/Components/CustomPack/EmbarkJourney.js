@@ -88,7 +88,7 @@ const EmbarkJourney = () => {
             </div>
           </div>
         </div>
-        <div className="ej-card-cta" onClick={() => navigate("/allaccess")}>
+        <div className="ej-card-cta pointer" onClick={() => navigate("/category/allaccess")}>
           Know More
         </div>
       </div>
@@ -193,7 +193,7 @@ const EmbarkJourney = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn" onClick={() => navigate("/allaccess")}>Know More</div>
+            <div className="ups-btn pointer" onClick={() => navigate("/category/allaccess")}>Know More</div>
           </div>
         </div>
       </div>

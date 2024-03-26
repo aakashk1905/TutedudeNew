@@ -5,8 +5,10 @@ import google from "../Assests/google.svg";
 import stars from "../Assests/stars.svg";
 import Navbar from "./Navbar";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
   const name = Cookies.get("user_name");
+  const navigate = useNavigate();
   return (
     <>
       <div className="hero-cont">
@@ -34,7 +36,7 @@ const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
               </div>
               <div className="hero-google-left-cont">
                 <div className="hero-stars-cont">
-                  <div className="hero-stars-text">4.4/5</div>
+                  <div className="hero-stars-text">4.9/5</div>
                   <div>
                     <img src={stars} alt="stars" />
                   </div>
@@ -65,10 +67,7 @@ const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
                     if (!name) {
                       setShowLogin(true);
                     } else {
-                      window.open(
-                        `http://localhost:3000/payment/${slug}`,
-                        "_blank"
-                      );
+                      navigate(`/payment/${slug}`);
                     }
                   }}
                 >

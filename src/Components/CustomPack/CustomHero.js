@@ -1,7 +1,13 @@
 import React from "react";
 import "./styles/CustomHero.css";
 import customheroright from "../../Assests/customheroright.png";
-const CustomHero = () => {
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import useCart from "../../contexts/Cart";
+const CustomHero = ({ setShowLogin }) => {
+  const navigate = useNavigate();
+  const { selectedCourse } = useCart();
+  const name = Cookies.get("user_name");
   return (
     <div className="custom-phero">
       <div className="custom-main">
@@ -17,7 +23,22 @@ const CustomHero = () => {
             <b style={{ color: "#3CAE42" }}>100% Refund validity</b> with each
             course pack
           </div>
-          <div className="home-hero-cta">Enroll Now</div>
+          <div
+            className="home-hero-cta pointer"
+            onClick={() => {
+              if (!name) {
+                setShowLogin(true);
+              } else {
+                if (selectedCourse.length > 0) {
+                  navigate(`/packpayment`);
+                } else {
+                  window.location.href = "#choose";
+                }
+              }
+            }}
+          >
+            Enroll Now
+          </div>
         </div>
         <div className="custom-right">
           <img src={customheroright} alt="customright"></img>

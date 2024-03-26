@@ -2,9 +2,10 @@ import React from "react";
 import "./Styles/Navbar.css";
 import logo from "../Assests/logo.png";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 const Navbar = ({ setShowLogin, setShowSign }) => {
   const name = Cookies.get("user_name");
-
+  const navigate = useNavigate();
   const handleLogout = async () => {
     Cookies.remove("user_email");
     Cookies.remove("user_pass");
@@ -12,11 +13,11 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
     Cookies.remove("bought");
 
     alert("Logged Out Successfully!");
-    window.location.href = "https://tutedude.com/clearrr.php";
+    window.location.reload();
   };
   return (
     <div className="hero-nav">
-      <div className="nav-logo-cont">
+      <div className="nav-logo-cont pointer" onClick={() => navigate("/")}>
         <img src={logo} alt="logo" />
       </div>
       {name ? (
@@ -30,6 +31,7 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
           <div
             className="nav-login"
             onClick={() => {
+              // console.log("Clicked");
               setShowSign(false);
               setShowLogin(true);
             }}

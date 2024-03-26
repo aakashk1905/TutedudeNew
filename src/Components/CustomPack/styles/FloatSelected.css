@@ -5,6 +5,7 @@
   width: 100%;
   position: fixed;
   bottom: 40px;
+  z-index: 2000000001 !important;
 }
 .float-s-inner-cont {
   border-radius: 24px;

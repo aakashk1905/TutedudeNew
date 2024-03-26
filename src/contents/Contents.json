@@ -1,6 +1,7 @@
 {
     "python": {
         "name": "Python",
+        "title": "Python",
         "introStats": {
             "ratings": "4.9+",
             "learners": "4000+",
@@ -467,6 +468,7 @@
     },
     "uiux": {
         "name": "UI/UX Designing",
+        "title": "UI/UX",
         "introStats": {
             "ratings": "4.9+",
             "learners": "5000+",
@@ -821,8 +823,9 @@
             }
         ]
     },
-    "ml": {
+    "machinelearning": {
         "name": "Machine Learning",
+        "title": "Machine Learning",
         "introStats": {
             "ratings": "4.9+",
             "learners": "5000+",
@@ -976,6 +979,7 @@
     },
     "mernstack": {
         "name": "Web Development MERN Stack",
+        "title": "MERN Stack",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -1281,6 +1285,7 @@
     },
     "webdevelopment": {
         "name": "Web Development with PHP/MySQL",
+        "title": "webdevelopment",
         "topics1": [
             {
                 "section_name": "Intro to Web Development",
@@ -1527,6 +1532,7 @@
     },
     "appdevelopment": {
         "name": "App Development",
+        "title": "App Development",
         "topics1": [
             {
                 "section_name": "Introduction to Android Studio",
@@ -1703,6 +1709,7 @@
     },
     "ethicalhacking": {
         "name": "Ethical Hacking",
+        "title": "Ethical Hacking",
         "topics1": [
             {
                 "section_name": "Introduction to Ethical Hacking",
@@ -1845,6 +1852,7 @@
     },
     "java": {
         "name": "Java",
+        "title": "Java",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -2072,6 +2080,7 @@
     },
     "cpp": {
         "name": "C++",
+        "title": "C++",
         "topics1": [
             {
                 "section_name": "Getting Started",
@@ -2197,6 +2206,7 @@
     },
     "datastructure": {
         "name": "DS & Algo",
+        "title": "Data Structures",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -2534,6 +2544,7 @@
     },
     "competitiveprogramming": {
         "name": "Competitive Programming",
+        "title": "Competitive Programming",
         "topics1": [
             {
                 "section_name": "Introduction to Competitive Programming",
@@ -2717,6 +2728,7 @@
     },
     "aftereffects": {
         "name": "After Effects",
+        "title": "After Effects",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -2901,6 +2913,7 @@
     },
     "photoshop": {
         "name": "Photoshop",
+        "title": "Photoshop",
         "topics1": [
             {
                 "section_name": "Welcome to Photoshop Course",
@@ -3079,6 +3092,7 @@
     },
     "premierepro": {
         "name": "Premiere Pro",
+        "title": "Premiere Pro",
         "topics1": [
             {
                 "section_name": "Lets Get Started",
@@ -3253,6 +3267,7 @@
     },
     "digitalmarketing": {
         "name": "Digital Marketing",
+        "title": "Digital Marketing",
         "topics1": [
             {
                 "section_name": "Introduction to Digital Marketing Course",
@@ -3547,6 +3562,7 @@
     },
     "fundamentalanalysis": {
         "name": "Stock Investing",
+        "title": "Fundamental Analysis",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -3634,6 +3650,7 @@
     },
     "technicalanalysis": {
         "name": "Stock Trading",
+        "title": "Technical Analysis",
         "topics1": [
             {
                 "section_name": "Introduction to the Course",
@@ -3803,6 +3820,7 @@
     },
     "illustrator": {
         "name": "Adobe Illustrator",
+        "title": "Illustrator",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -3963,6 +3981,7 @@
     },
     "financialmodelling": {
         "name": "Financial Modelling & Valuation",
+        "title": "Financial Modelling & Valuation",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -4081,6 +4100,7 @@
     },
     "datascience": {
         "name": "Data Science",
+        "title": "Data Science",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -4225,6 +4245,7 @@
     },
     "reactnative": {
         "name": "React Native",
+        "title": "React Native",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -4351,6 +4372,7 @@
     },
     "riskmanagement": {
         "name": "Financial Risk Management",
+        "title": "Financial Risk Management",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -4439,6 +4461,7 @@
     },
     "dbms": {
         "name": "DBMS",
+        "title": "DBMS",
         "topics1": [
             {
                 "section_name": "Introduction",
@@ -4770,6 +4793,7 @@
     },
     "devops": {
         "name": "DevOps",
+        "title": "DevOps",
         "topics1": [
             {
                 "section_name": "Introduction to DevOps",
@@ -4934,7 +4958,8 @@
         }
     },
     "reactjs": {
-        "name": "ReactJs",
+        "name": "React Js",
+        "title": "React Js",
         "topics1": [
             {
                 "section_name": "React Basics",

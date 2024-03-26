@@ -148,7 +148,7 @@ const AllChooseCourse = () => {
   );
   return (
     <div className="chc-cont">
-      <div className="usr-head">Choose your courses </div>
+      <div className="usr-head">All 25 Courses You Get</div>
       <div className="chc-input-cont">
         <img src={searchImg} alt="search" />
         <input
@@ -167,10 +167,10 @@ const AllChooseCourse = () => {
                 <div
                   className={`chc-card ${selected ? "chc-selected" : ""}`}
                   key={ind}
-                  //   onClick={() => navigate(`/${course.slug}`)}
+                  //   onClick={() => navigate(`/category/${course.slug}`)}
                   onClick={() => {
                     window.open(
-                      `${window.location.origin}/${course.slug}`,
+                      `${window.location.origin}/category${course.slug}`,
                       "_blank"
                     );
                   }}
@@ -185,10 +185,10 @@ const AllChooseCourse = () => {
                     {!selected && (
                       <div
                         className="chc-cta"
-                        // onClick={() => navigate(`/${course.slug}`)}
+                        // onClick={() => navigate(`/category/${course.slug}`)}
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}
@@ -230,10 +230,10 @@ const AllChooseCourse = () => {
                 <div
                   className={`chc-card ${selected ? "chc-selected" : ""}`}
                   key={ind}
-                  //   onClick={() => navigate(`/${course.slug}`)}
+                  //   onClick={() => navigate(`/category/${course.slug}`)}
                   onClick={() => {
                     window.open(
-                      `${window.location.origin}/${course.slug}`,
+                      `${window.location.origin}/category/${course.slug}`,
                       "_blank"
                     );
                   }}
@@ -248,10 +248,10 @@ const AllChooseCourse = () => {
                     {!selected && (
                       <div
                         className="chc-cta"
-                        // onClick={() => navigate(`/${course.slug}`)}
+                        // onClick={() => navigate(`/category/${course.slug}`)}
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}
@@ -293,10 +293,10 @@ const AllChooseCourse = () => {
                 <div
                   className={`chc-card ${selected ? "chc-selected" : ""}`}
                   key={ind}
-                  //   onClick={() => navigate(`/${course.slug}`)}
+                  //   onClick={() => navigate(`/category/${course.slug}`)}
                   onClick={() => {
                     window.open(
-                      `${window.location.origin}/${course.slug}`,
+                      `${window.location.origin}/category/${course.slug}`,
                       "_blank"
                     );
                   }}
@@ -311,10 +311,10 @@ const AllChooseCourse = () => {
                     {!selected && (
                       <div
                         className="chc-cta"
-                        // onClick={() => navigate(`/${course.slug}`)}
+                        // onClick={() => navigate(`/category/${course.slug}`)}
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}

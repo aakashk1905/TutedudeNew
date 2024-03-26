@@ -6,7 +6,9 @@ import techallround from "../../Assests/techallrounder.png";
 import techpro from "../../Assests/techpro.png";
 import scprefundabs from "../../Assests/scprefundabs.svg";
 import useCart from "../../contexts/Cart";
+import { useNavigate } from "react-router-dom";
 const SuggestedCoursePack = () => {
+  const navigate = useNavigate();
   const { setSelectedCourse } = useCart();
   const containerRef = useRef(null);
   const [dragStartX, setDragStartX] = useState(null);
@@ -226,6 +228,7 @@ const SuggestedCoursePack = () => {
 
                   return updatedCourses;
                 });
+                navigate("/packpayment");
               }}
             >
               Enroll Now

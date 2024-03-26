@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/BrowseCourses.css";
 import bcdes from "../Assests/bcdes.svg";
 import code from "../Assests/code.svg";
@@ -30,13 +30,16 @@ import ta from "../Assests/courses/ta.png";
 import uiux from "../Assests/courses/uiux.png";
 
 const BrowseCourses = () => {
-  const courses = [
+  const [courses, setCourses] = useState([]);
+  const [active, setActive] = useState(1);
+  const course = [
     {
       text: "MERN Stack",
       cimg: mern,
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "mernstack",
+      type: "development",
     },
     {
       text: "React JS",
@@ -44,6 +47,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "reactjs",
+      type: "development",
     },
     {
       text: "React Native",
@@ -51,6 +55,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "reactnative",
+      type: "development",
     },
     {
       text: "App Development",
@@ -58,6 +63,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "appdevelopment",
+      type: "development",
     },
     {
       text: "Python",
@@ -65,6 +71,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "python",
+      type: "it",
     },
     {
       text: "Java",
@@ -72,6 +79,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "java",
+      type: "it",
     },
     {
       text: "C++",
@@ -79,6 +87,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "cpp",
+      type: "it",
     },
     {
       text: "PHP/MySQL Web Development",
@@ -86,6 +95,7 @@ const BrowseCourses = () => {
       col: "#0086D1",
       bg: "rgba(0, 134, 209, 0.11)",
       slug: "webdevelopment",
+      type: "development",
     },
     {
       text: "DevOPS",
@@ -93,6 +103,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "devops",
+      type: "it",
     },
     {
       text: "DBMS",
@@ -100,6 +111,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "dbms",
+      type: "it",
     },
     {
       text: "Ethical Hacking",
@@ -107,6 +119,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "ethicalhacking",
+      type: "it",
     },
     {
       text: "Competitive Programming",
@@ -114,6 +127,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "competitiveprogramming",
+      type: "it",
     },
     {
       text: "Data Structures & Algorithms",
@@ -121,6 +135,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "datastructure",
+      type: "it",
     },
     {
       text: "Data Science",
@@ -128,6 +143,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "datascience",
+      type: "it",
     },
     {
       text: "Digital Marketing",
@@ -135,6 +151,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "digitalmarketing",
+      type: "bussiness",
     },
     {
       text: "Stock Market",
@@ -142,6 +159,7 @@ const BrowseCourses = () => {
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
       slug: "stockmarket",
+      type: "bussiness",
     },
     {
       text: "Financial Risk Managment",
@@ -149,6 +167,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "riskmanagement",
+      type: "bussiness",
     },
     {
       text: "Technical Analysis",
@@ -156,6 +175,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "technicalanalysis",
+      type: "bussiness",
     },
     {
       text: "Financial Modelling & Valuation",
@@ -163,6 +183,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "financialmodelling",
+      type: "bussiness",
     },
     {
       text: "UI UX Designing",
@@ -170,6 +191,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "uiux",
+      type: "drawing",
     },
     {
       text: "Adobe Photoshop",
@@ -177,6 +199,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "photoshop",
+      type: "drawing",
     },
     {
       text: "Adobe After Effects",
@@ -184,6 +207,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "aftereffects",
+      type: "drawing",
     },
     {
       text: "Adobe Premiere Pro",
@@ -191,6 +215,7 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "premierepro",
+      type: "drawing",
     },
     {
       text: "Adobe Illustrator",
@@ -198,11 +223,16 @@ const BrowseCourses = () => {
       col: "#D17100",
       bg: "rgba(209, 113, 0, 0.11)",
       slug: "illustrator",
+      type: "drawing",
     },
   ];
 
+  useEffect(() => {
+    setCourses(course);
+  }, []);
+
   return (
-    <div className="bc-cont">
+    <div className="bc-cont" id="courses">
       <div className="home-wu-top">
         <div className="home-hr-head">
           Browse our <b className="home-hr-head-col">Courses</b>
@@ -213,12 +243,32 @@ const BrowseCourses = () => {
         </div>
       </div>
       <div className="bc-mid">
-        <div className="bc-mid-chip">All Courses</div>
-        <div className="bc-mid-chip">
+        <div
+          className={`bc-mid-chip pointer ${active === 1 ? "chip-active" : ""}`}
+          onClick={() => {
+            setActive(1);
+            setCourses(course);
+          }}
+        >
+          All Courses
+        </div>
+        <div
+          className={`bc-mid-chip pointer ${active === 2 ? "chip-active" : ""}`}
+          onClick={() => {
+            setActive(2);
+            setCourses((cs) => course.filter((c) => c.type === "drawing"));
+          }}
+        >
           <img src={bcdes} alt="bcdes" />
           Design
         </div>
-        <div className="bc-mid-chip">
+        <div
+          className={`bc-mid-chip pointer ${active === 3 ? "chip-active" : ""}`}
+          onClick={() => {
+            setActive(3);
+            setCourses((cs) => course.filter((c) => c.type === "development"));
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
@@ -292,10 +342,22 @@ const BrowseCourses = () => {
           </svg>
           Development
         </div>
-        <div className="bc-mid-chip">
+        <div
+          className={`bc-mid-chip pointer ${active === 4 ? "chip-active" : ""}`}
+          onClick={() => {
+            setActive(4);
+            setCourses((cs) => course.filter((c) => c.type === "it"));
+          }}
+        >
           <img src={code} alt="bcdes" /> IT & Software
         </div>
-        <div className="bc-mid-chip">
+        <div
+          className={`bc-mid-chip pointer ${active === 5 ? "chip-active" : ""}`}
+          onClick={() => {
+            setActive(5);
+            setCourses((cs) => course.filter((c) => c.type === "bussiness"));
+          }}
+        >
           <img src={business} alt="bcdes" /> Business
         </div>
       </div>

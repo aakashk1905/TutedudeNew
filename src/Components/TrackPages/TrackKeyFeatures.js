@@ -54,7 +54,7 @@ const TrackKeyFeatures = () => {
           </div>
         </div>
       </div>
-      <div className="track-kf-btm">
+      <div className="track-kf-btm" id="key-features">
         <div className="track-kf-btm-left">
           <div className="track-kf-btm-left-head">
             How does the <b>Internship Program</b> work?

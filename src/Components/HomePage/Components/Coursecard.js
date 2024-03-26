@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Coursecard = ({ cimg, text, col, bg, slug }) => {
   const navigate = useNavigate();
   return (
-    <div className="cc-cont" onClick={() => navigate(`/${slug}`)}>
+    <div className="cc-cont pointer" onClick={() => navigate(`/category/${slug}`)}>
       <div className="cc-left">
         <img src={cimg} alt="card"></img>
         <div>{text}</div>

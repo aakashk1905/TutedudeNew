@@ -110,7 +110,7 @@ const Upsell = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn" onClick={() => navigate("/custompack")}>Know More</div>
+            <div className="ups-btn" onClick={() => navigate("/category/customizepack")}>Know More</div>
           </div>
         </div>
 
@@ -214,7 +214,7 @@ const Upsell = () => {
                 <div className="ups-points">Avail 100% refund in 1 year.</div>
               </div>
             </div>
-            <div className="ups-btn" onClick={() => navigate("/allaccess")}>Know More</div>
+            <div className="ups-btn" onClick={() => navigate("/category/allaccess")}>Know More</div>
           </div>
         </div>
 

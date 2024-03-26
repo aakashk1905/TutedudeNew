@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./styles/Slider.css";
 import intc1 from "../Assests/intc1.svg";
+import { useNavigate } from "react-router-dom";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1201 },
@@ -27,6 +28,7 @@ const responsive = {
 };
 
 const Slider = () => {
+  const navigate = useNavigate();
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -60,7 +62,7 @@ const Slider = () => {
                   fill="#263238"
                 />
               </svg>
-              300+ Enrolled
+              350+ Enrolled
             </div>
             <div className="int-card-head">Full Stack Internship Pack</div>
             <div className="int-card-text-cont">
@@ -127,12 +129,15 @@ const Slider = () => {
               </div>
             </div>
             <div className="int-card-price">
-              ₹2,499
+              ₹2,999
               <div className="int-card-price-high">You save ₹300</div>
             </div>
           </div>
-          <div className="int-lm">
-            Learn More{" "}
+          <div
+            className="int-lm pointer"
+            onClick={() => navigate("/tracks/fullstackdevelopment")}
+          >
+            Learn More
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -165,7 +170,7 @@ const Slider = () => {
                   fill="#263238"
                 />
               </svg>
-              200+ Enrolled
+              300+ Enrolled
             </div>
             <div className="int-card-head">Python Internship Pack</div>
             <div className="int-card-text-cont">
@@ -232,11 +237,14 @@ const Slider = () => {
               </div>
             </div>
             <div className="int-card-price">
-              ₹2,499
+              ₹2,999
               <div className="int-card-price-high">You save ₹300</div>
             </div>
           </div>
-          <div className="int-lm">
+          <div
+            className="int-lm pointer"
+            onClick={() => navigate("/tracks/pythondevelopment")}
+          >
             Learn More{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +278,7 @@ const Slider = () => {
                   fill="#263238"
                 />
               </svg>
-              100+ Enrolled
+              200+ Enrolled
             </div>
             <div className="int-card-head">
               App Development internship Track
@@ -339,11 +347,14 @@ const Slider = () => {
               </div>
             </div>
             <div className="int-card-price">
-              ₹2,499
+              ₹2,999
               <div className="int-card-price-high">You save ₹300</div>
             </div>
           </div>
-          <div className="int-lm">
+          <div
+            className="int-lm pointer"
+            onClick={() => navigate("/tracks/appdevelopment")}
+          >
             Learn More{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -377,7 +388,7 @@ const Slider = () => {
                   fill="#263238"
                 />
               </svg>
-              400+ Enrolled
+              350+ Enrolled
             </div>
             <div className="int-card-head">Data Science Internship Track</div>
             <div className="int-card-text-cont">
@@ -444,11 +455,14 @@ const Slider = () => {
               </div>
             </div>
             <div className="int-card-price">
-              ₹2,499
+              ₹2,999
               <div className="int-card-price-high">You save ₹300</div>
             </div>
           </div>
-          <div className="int-lm">
+          <div
+            className="int-lm pointer"
+            onClick={() => navigate("/tracks/datascience")}
+          >
             Learn More{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -552,7 +566,10 @@ const Slider = () => {
               <div className="int-card-price-high">You save ₹300</div>
             </div>
           </div>
-          <div className="int-lm">
+          <div
+            className="int-lm pointer"
+            onClick={() => navigate("/tracks/uiuxtrack")}
+          >
             Learn More{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"

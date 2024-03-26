@@ -1,6 +1,6 @@
 import React from 'react'
 import './Styles/Certificate.css'
-import certificate from '../Assests/certificate.svg'
+import certificate from '../Assests/certificate.png'
 const Certificate = ({name}) => {
   return (
     <div className='cert-cont'>

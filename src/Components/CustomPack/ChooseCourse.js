@@ -23,7 +23,7 @@ const ChooseCourse = () => {
     (c, i) => c.category === "bussiness"
   );
   return (
-    <div className="chc-cont">
+    <div className="chc-cont" id="choose">
       <div className="usr-head">Choose your courses </div>
       <div className="chc-input-cont">
         <img src={searchImg} alt="search" />
@@ -43,7 +43,9 @@ const ChooseCourse = () => {
               );
               return (
                 <div
-                  className={`chc-card ${selected ? "chc-selected" : ""}`}
+                  className={`chc-card pointer  ${
+                    selected ? "chc-selected" : ""
+                  }`}
                   key={ind}
                   onClick={() => {
                     if (!selected) {
@@ -69,7 +71,7 @@ const ChooseCourse = () => {
                         className="chc-cta"
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}
@@ -182,7 +184,9 @@ const ChooseCourse = () => {
               );
               return (
                 <div
-                  className={`chc-card ${selected ? "chc-selected" : ""}`}
+                  className={`chc-card pointer ${
+                    selected ? "chc-selected" : ""
+                  }`}
                   key={ind}
                   onClick={() => {
                     if (!selected) {
@@ -208,7 +212,7 @@ const ChooseCourse = () => {
                         className="chc-cta"
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}
@@ -321,7 +325,9 @@ const ChooseCourse = () => {
               );
               return (
                 <div
-                  className={`chc-card ${selected ? "chc-selected" : ""}`}
+                  className={`chc-card pointer ${
+                    selected ? "chc-selected" : ""
+                  }`}
                   key={ind}
                   onClick={() => {
                     if (!selected) {
@@ -347,7 +353,7 @@ const ChooseCourse = () => {
                         className="chc-cta"
                         onClick={() => {
                           window.open(
-                            `${window.location.origin}/${course.slug}`,
+                            `${window.location.origin}/category/${course.slug}`,
                             "_blank"
                           );
                         }}

@@ -44,6 +44,7 @@ const Login = ({ setShowLogin, setShowSign, closeCross, setBought }) => {
           }
           Cookies.set("user_name", data.sName);
           setShowLogin(false);
+          window.location.reload();
         } else {
           if (password === "googlesignin")
             window.alert(

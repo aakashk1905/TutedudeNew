@@ -1,0 +1,138 @@
+{
+    "fullstackdevelopment": {
+        "heroHead": "Full Stack Web Development",
+        "curricHead": "Full Stack Developer",
+        "curricSubHead": "Full Stack",
+        "price": "2,999",
+        "curric": [
+            {
+                "name": "C++",
+                "details": "Learn C++ For Strong Programming Fundamentals.",
+                "slug": "cpp"
+            },
+            {
+                "name": "MERN Stack",
+                "details": "Master The MERN Stack For High-Demand Projects.",
+                "slug": "mernstack"
+            },
+            {
+                "name": "Data Structure & Algorithm",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "datastructure"
+            },
+            {
+                "name": "Competitve Programming",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "competitiveprogramming"
+            }
+        ]
+    },
+    "pythondevelopment": {
+        "heroHead": "Python Development",
+        "curricHead": "Python Developer",
+        "curricSubHead": "Python",
+        "price": "2,999",
+        "curric": [
+            {
+                "name": "C++",
+                "details": "Learn C++ For Strong Programming Fundamentals.",
+                "slug": "cpp"
+            },
+            {
+                "name": "Python",
+                "details": "Master The Python For High-Demand Projects.",
+                "slug": "python"
+            },
+            {
+                "name": "Data Structure & Algorithm",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "datastructure"
+            },
+            {
+                "name": "Competitve Programming",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "competitiveprogramming"
+            }
+        ]
+    },
+    "appdevelopment": {
+        "heroHead": "App Development",
+        "curricHead": "App Developer",
+        "curricSubHead": "App",
+        "price": "2,999",
+        "curric": [
+            {
+                "name": "C++",
+                "details": "Learn C++ For Strong Programming Fundamentals.",
+                "slug": "cpp"
+            },
+            {
+                "name": "App Development",
+                "details": "Master The App Development For High-Demand Projects.",
+                "slug": "appdevelopment"
+            },
+            {
+                "name": "Data Structure & Algorithm",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "datastructure"
+            },
+            {
+                "name": "JAVA",
+                "details": "Excel In JAVA For Interview Success.",
+                "slug": "java"
+            }
+        ]
+    },
+    "datascience": {
+        "heroHead": "Data Science",
+        "curricHead": "Data Science",
+        "curricSubHead": "Data Science",
+        "price": "2,999",
+        "curric": [
+            {
+                "name": "C++",
+                "details": "Learn C++ For Strong Programming Fundamentals.",
+                "slug": "cpp"
+            },
+            {
+                "name": "Data Science",
+                "details": "Master The Data Science to BEcome Industry ready.",
+                "slug": "datascience"
+            },
+            {
+                "name": "Data Structure & Algorithm",
+                "details": "Excel In Data Structures And Algorithms For Interview Success.",
+                "slug": "datastructure"
+            },
+            {
+                "name": "Python",
+                "details": "Master The Python For High-Demand Projects.",
+                "slug": "python"
+            }
+        ]
+    },
+    "uiuxtrack": {
+        "dbms": true,
+        "heroHead": "UI/UX",
+        "curricHead": "UI/UX",
+        "curricSubHead": "UI/UX",
+        "price": "2,499",
+        "curric": [
+            {
+                "name": "UI/UX",
+                "details": "Learn UI/UX to become a Better Designer",
+                "slug": "uiux"
+            },
+            {
+                "name": "Photoshop",
+                "details": "Master Photoshop For High-Demand Projects.",
+                "slug": "photoshop"
+            },
+            {
+                "name": "Adobe Illustrator",
+                "details": "Excel the art of creating stunning Illustrations",
+                "slug": "illustrator"
+            }
+        ]
+    }
+}

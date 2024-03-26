@@ -7,6 +7,9 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0 20px;
+  z-index: 11111111;
+
+
 }
 .home-nav-logout-btn {
   position: relative;
@@ -17,6 +20,7 @@
   border: 2px solid purple;
   border-radius: 10px;
   padding: 10px 20px;
+  box-sizing: border-box;
   font-size: 17px;
   font-weight: bold;
   background: transparent;
@@ -80,7 +84,7 @@
   height: auto;
   justify-content: center;
   align-items: center;
-  width: 30vw;
+  /* width: 30vw; */
   display: flex;
   gap: 24px;
 }
@@ -217,7 +221,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(50px, 15vw, 350px);
+    width: clamp(80px, 15vw, 350px);
     height: auto;
     padding: 10px 0;
     color: #5b00d1;
@@ -272,6 +276,15 @@
     justify-content: center;
     align-items: center;
     width: auto;
+  }
+  .home-nav-btn-cont {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    /* width: 30vw; */
+    display: flex;
+    gap: 5px;
   }
   .logo-cont img {
     width: 160px;
@@ -335,7 +348,7 @@
     font-size: 20px;
   }
   .logbtn {
-    width: clamp(50px, 15vw, 350px);
+    width: clamp(70px, 15vw, 350px);
     height: auto;
     color: #5b00d1;
     text-align: center;
@@ -351,7 +364,7 @@
   }
   
   .signbtn {
-    width: clamp(50px, 15vw, 350px);
+    width: clamp(70px, 15vw, 350px);
     max-width: 350px;
     font-size: 12px;
     height: auto;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BrowseCourses from "../Components/HomePage/Components/BrowseCourses";
 import ComboPack from "../Components/HomePage/Components/ComboPack";
 import Hero from "../Components/HomePage/Components/Hero";
@@ -10,9 +10,10 @@ import IntroFooter from "../Components/HomePage/Components/IntroFooter";
 import Testimonials from "../Components/HomePage/Components/Testimonials";
 import Videoreview from "../Components/HomePage/Components/VideoReview";
 import Whyus from "../Components/HomePage/Components/Whyus";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import SignUp from "../Components/SignUp";
 import Login from "../Components/Login";
+import WhyRefund from "../Components/WhyRefund";
 
 const Main = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -21,14 +22,14 @@ const Main = () => {
     {
       name: "Rekha M",
       review:
-        "TuteDude's Data Science course is an exceptional choice for learners seeking comprehensive knowledge and robust support. With a well-structured curriculum, interactive learning, outstanding doubt clarification, and a supportive community, this course provides a top-tier educational experience. It's ideal for both beginners and those looking to advance their data science skills in a flexible, self-paced ",
+        "TuteDude's Data Science course offers comprehensive learning with structured content, interactive features, excellent support, and a supportive community. Ideal for beginners and advanced learners alike, it provides a top-tier educational experience in a flexible, self-paced format.",
       desig: " Data science,Student",
     },
     {
       name: "Suraj Thakkar",
       desig: "Digital Marketing, Student",
       review:
-        "I just finished a digital marketing course at TuteDude, and I'm thrilled with the experience. At 699rs, it's highly affordable for the quality education you receive. The icing on the cake? TuteDude offers a unique money-back guarantee, which I was pleasantly surprised to take advantage of. After completing the course and submitting the assignment, I received a full refund, effectively making my digital marketing education entirely free!",
+        "TuteDude's digital marketing course at 699rs offers exceptional value with top-notch education. The unique money-back guarantee makes it risk-free. After completing the course, I received a full refund, essentially making it free. This showcases TuteDude's dedication to student satisfaction. ",
     },
     {
       name: "Vedant Sharma",
@@ -49,25 +50,49 @@ const Main = () => {
         "I'm happy to share that I had a great experience with Tutedude! The platform sounds like a truly helpful resource for developers and anyone seeking digital knowledge. It's wonderful to know that the mentor was supportive and stood by their word.",
     },
   ];
+  const customSlideToExploreRef = useRef(null);
+  const [showFloatSelected, setShowFloatSelected] = useState(false);
 
   useEffect(() => {
-    const email = Cookies.get("user_email");
-    const name = Cookies.get("user_name");
-    if (!email || !name) {
-      setShowLogin(true);
-    }
+    const handleScroll = () => {
+      if (customSlideToExploreRef.current) {
+        const customSlideToExploreRect =
+          customSlideToExploreRef.current.getBoundingClientRect();
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        if (scrollPosition >= customSlideToExploreRect.top) {
+          setShowFloatSelected(true);
+        } else {
+          setShowFloatSelected(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  if (showSign)
-    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
-
-  if (showLogin)
-    return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   return (
     <div>
+      {showFloatSelected && (
+        <div className="mobile-floater">
+          <div className="mobile-floater-inner" onClick={()=>window.location.href="#why-refund"}>Enroll Now</div>
+        </div>
+      )}
+      {showSign && (
+        <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
+      )}
+      {showLogin && (
+        <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
+      )}
       <Hero setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      <HowRefund />
+      <div ref={customSlideToExploreRef}>
+        <HowRefund />
+      </div>
+      <WhyRefund />
       <Whyus />
+
       <BrowseCourses />
       <Internship />
       <ComboPack />

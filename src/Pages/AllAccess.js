@@ -10,7 +10,8 @@ import IntroFooter from "../Components/IntroFooter";
 import AllFloatSelected from "../Components/AllAccess/AllFloatSelected";
 import SignUp from "../Components/SignUp";
 import Login from "../Components/Login";
-import Cookies from "js-cookie";
+import { Helmet } from "react-helmet";
+// import Cookies from "js-cookie";
 
 const AllAccess = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
@@ -19,11 +20,16 @@ const AllAccess = () => {
   const customSlideToExploreRef = useRef(null);
 
   useEffect(() => {
+    window.gtag("event", "conversion", {
+      send_to: "AW-711435738/CRmfCMKls7oDENrLntMC",
+    });
     const handleScroll = () => {
       if (customSlideToExploreRef.current) {
         const customSlideToExploreRect =
           customSlideToExploreRef.current.getBoundingClientRect();
+
         const scrollPosition = window.scrollY || window.pageYOffset;
+
         if (scrollPosition >= customSlideToExploreRect.top) {
           setShowFloatSelected(true);
         } else {
@@ -38,19 +44,19 @@ const AllAccess = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const email = Cookies.get("user_email");
-    const name = Cookies.get("user_name");
-    if (!email || !name) {
-      setShowLogin(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const email = Cookies.get("user_email");
+  //   const name = Cookies.get("user_name");
+  //   if (!email || !name) {
+  //     setShowLogin(true);
+  //   }
+  // }, []);
 
-  if (showSign)
-    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
+  // if (showSign)
+  //   return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
 
-  if (showLogin)
-    return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
+  // if (showLogin)
+  //   return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -80,19 +86,29 @@ const AllAccess = () => {
   ];
   return (
     <div>
+      <Helmet>
+        <title>All Access Pack Page</title>
+      </Helmet>
+      {showSign && (
+        <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
+      )}
+      {showLogin && (
+        <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
+      )}
       <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      <AllAccessHero />
+      <AllAccessHero setShowLogin={setShowLogin} />
       <DiscoverAllAccess />
       <Customhow />
       <div ref={customSlideToExploreRef}>
-        <AllAccessBenefits />
+        <AllAccessBenefits setShowLogin={setShowLogin} />
       </div>
 
       <AllChooseCourse />
 
       <IntroFaq customFaq={query} />
       <IntroFooter />
-      {showFloatSelected && <AllFloatSelected />}
+      {console.log(showFloatSelected)}
+      {showFloatSelected && <AllFloatSelected setShowLogin={setShowLogin} />}
     </div>
   );
 };

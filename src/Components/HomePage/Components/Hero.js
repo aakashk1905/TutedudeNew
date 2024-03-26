@@ -44,8 +44,10 @@ const Hero = ({ setShowLogin, setShowSign }) => {
               className="google-review"
             ></img>
             <div className="home-hero-cta-cont">
-              <div className="home-hero-cta">what is 100% refund offer</div>
-              <div className="home-hero-cta-vid">
+              <a href="#how-refund">
+                <div className="home-hero-cta">what is 100% refund offer</div>
+              </a>
+              <div className="home-hero-cta-vid pointer" onClick={()=>window.location.href="#why-refund"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"

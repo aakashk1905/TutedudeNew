@@ -7,6 +7,10 @@
   padding: 50px 0;
   background: #f8f4fd;
 }
+.track-cc-btm-mid {
+  justify-content: center !important;
+  gap: 20px !important;
+}
 .track-cc-top {
   width: 90%;
   display: flex;

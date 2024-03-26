@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./styles/FloatSelected.css";
 import useCart from "../../contexts/Cart";
 import { useNavigate } from "react-router-dom";
-const FloatSelected = () => {
+import Cookies from "js-cookie";
+const FloatSelected = ({ setShowLogin }) => {
   const [price, setPrice] = useState(0);
   const { selectedCourse } = useCart();
+  const [name, setName] = useState(Cookies.get("user_name"));
+  useEffect(() => {
+    setName(Cookies.get("user_name"));
+  }, []);
   const navigate = useNavigate();
   useEffect(() => {
     if (selectedCourse?.length !== 0) {
@@ -30,11 +35,20 @@ const FloatSelected = () => {
           ₹ {price} <span>Total Price</span>
         </div>
         {selectedCourse?.length > 0 ? (
-          <div className="flc-cta" onClick={() => navigate("/payment")}>
+          <div
+            className="flc-cta pointer"
+            onClick={() => {
+              if (!name) {
+                setShowLogin(true);
+              } else {
+                navigate(`/packpayment`);
+              }
+            }}
+          >
             Proceed
           </div>
         ) : (
-          <div className="flc-cta">Add Course</div>
+          <div className="flc-cta pointer">Add Course</div>
         )}
       </div>
     </div>

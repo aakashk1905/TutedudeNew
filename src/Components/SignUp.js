@@ -38,6 +38,7 @@ const SignUp = ({ setShowSign, setShowLogin, closeCross }) => {
           Cookies.set("user_name", name);
           window.alert("Registration Successfull!!!");
           setShowSign(false);
+          window.location.reload();
         } else {
           window.alert("Email Already Registerd!!! Please Log In...");
           setShowSign(false);

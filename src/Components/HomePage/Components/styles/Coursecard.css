@@ -1,7 +1,7 @@
 .cc-cont {
-  width: 280px;
-  display: flex;
   width: 250px;
+  display: flex;
+
   padding: 12px;
   justify-content: space-between;
   align-items: center;
@@ -38,4 +38,10 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .cc-cont {
+    width: 280px;
+  }
 }

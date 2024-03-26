@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "../Components/Hero";
 import WhyRefund from "../Components/WhyRefund";
 import HowRefund from "../Components/HowRefund";
@@ -14,15 +14,18 @@ import IntroFooter from "../Components/IntroFooter";
 import Cookies from "js-cookie";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import contents from "../contents/Contents.json";
+import { Helmet } from "react-helmet";
 
 const Category = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
+  const name = Cookies.get("user_name");
   const [bought, setBought] = useState(Cookies.get("bought") || false);
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const ids = [
     "mernstack",
@@ -55,31 +58,79 @@ const Category = () => {
   if (!ids.includes(slug)) {
     Cookies.remove("slug");
     alert("wrong URL!!!");
-    window.location.href = "https://tutedude.com";
+    navigate("/");
   }
 
+  const customSlideToExploreRef = useRef(null);
+  const [showFloatSelected, setShowFloatSelected] = useState(false);
+
   useEffect(() => {
-    const email = Cookies.get("user_email");
-    const name = Cookies.get("user_name");
-    if (!email || !name) {
-      setShowLogin(true);
-    }
+    const handleScroll = () => {
+      if (customSlideToExploreRef.current) {
+        const customSlideToExploreRect =
+          customSlideToExploreRef.current.getBoundingClientRect();
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        if (scrollPosition >= customSlideToExploreRect.top) {
+          setShowFloatSelected(true);
+        } else {
+          setShowFloatSelected(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
-
-  if (showSign)
-    return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
-
-  if (showLogin)
-    return (
-      <Login
-        setBought={setBought}
-        setShowLogin={setShowLogin}
-        setShowSign={setShowSign}
-      />
-    );
+  useEffect(() => {
+    window.gtag("event", "conversion", {
+      send_to: "AW-711435738/CRmfCMKls7oDENrLntMC",
+    });
+  }, []);
 
   return (
     <>
+      <Helmet>
+        <title>{contents[slug]?.title}</title>
+      </Helmet>
+      {showSign && (
+        <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
+      )}
+      {showLogin && (
+        <Login
+          setBought={setBought}
+          setShowLogin={setShowLogin}
+          setShowSign={setShowSign}
+        />
+      )}
+      {showFloatSelected && (
+        <div className="mobile-floater">
+          {bought ? (
+            <div
+              className="mobile-floater-inner"
+              onClick={() =>
+                window.open("https://upskill.tutedude.com/dashboard")
+              }
+            >
+              Got to Dashboard
+            </div>
+          ) : (
+            <div
+              className="mobile-floater-inner"
+              onClick={() => {
+                if (!name) {
+                  setShowLogin(true);
+                } else {
+                  navigate(`/payment/${slug}`);
+                }
+              }}
+            >
+              Enroll Now
+            </div>
+          )}
+        </div>
+      )}
       <Hero
         setShowLogin={setShowLogin}
         setShowSign={setShowSign}
@@ -87,7 +138,9 @@ const Category = () => {
         cont={contents[slug]}
         slug={slug}
       />
-      <HowRefund bought={bought} setShowLogin={setShowLogin} />
+      <div ref={customSlideToExploreRef}>
+        <HowRefund bought={bought} setShowLogin={setShowLogin} />
+      </div>
       <WhyRefund />
       <UnlockCourse />
       <Curriculum

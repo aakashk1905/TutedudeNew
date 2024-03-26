@@ -7,7 +7,7 @@ const StipendCard = () => {
       <div className="stipend-inner-cont">
         <div className="stipend-left">
           <div className="stipend-left-head">india’s first stipend guaranteed internship programme</div>
-          <button>
+          <button onClick={()=> window.location.href = "#key-features"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"

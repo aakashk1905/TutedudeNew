@@ -12,7 +12,9 @@
 .int-card > img {
   width: 100%;
 }
-
+.pointer {
+  cursor: pointer;
+}
 .int-card-mid {
   background: var(--color-guide-common-white, #fff);
   display: flex;
@@ -144,7 +146,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .int-card{
+  .int-card {
     width: 320px;
   }
 }

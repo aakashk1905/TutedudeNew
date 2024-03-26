@@ -8,7 +8,13 @@ import hero3 from "../HomePage/Assests/hero3.png";
 import hero4 from "../HomePage/Assests/hero4.png";
 import googlereview from "../HomePage/Assests/googlereview.svg";
 import Navbar from "../HomePage/Components/Navbar";
-const TrackHero = () => {
+import useCart from "../../contexts/Cart";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+const TrackHero = ({ data, setShowLogin }) => {
+  const { setSelectedCourse } = useCart();
+  const navigate = useNavigate();
+  const name = Cookies.get("user_name");
   return (
     <div className="home-hero-cont">
       <Navbar />
@@ -23,7 +29,7 @@ const TrackHero = () => {
               An <b>IIT Delhi</b> Alumni Initiative
             </div>
             <div className="home-hero-head">
-              Master Full Stack Web Development with{" "}
+              Master {data.heroHead} with{" "}
               <b
                 style={{
                   background:
@@ -47,7 +53,19 @@ const TrackHero = () => {
               className="google-review"
             ></img>
             <div className="home-hero-cta-cont">
-              <div className="home-hero-cta">Apply Now for only ₹2,999</div>
+              <div
+                className="home-hero-cta pointer"
+                onClick={() => {
+                  if (!name) {
+                    setShowLogin(true);
+                  } else {
+                    setSelectedCourse(data.curric);
+                    navigate("/trackpayment");
+                  }
+                }}
+              >
+                Apply Now for only ₹{data.price}
+              </div>
             </div>
           </div>
           <div className="home-hero-right">

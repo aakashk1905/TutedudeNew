@@ -20,6 +20,13 @@
   line-height: normal;
   text-align: center;
 }
+.cert-img {
+  width: 40%;
+}
+.cert-img img {
+  width: 100%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
 .cert-text {
   width: 518px;
   color: #5c5c5c;
@@ -33,7 +40,6 @@
 
 @media screen and (max-width: 1000px) {
   .cert-head {
-   
     font-size: 32px;
     display: flex;
     justify-content: center;
@@ -51,10 +57,10 @@
     font-weight: 500;
     line-height: normal;
   }
-  .cert-img{
+  .cert-img {
     width: 90%;
   }
-  .cert-img img{
+  .cert-img img {
     width: 100%;
   }
 }

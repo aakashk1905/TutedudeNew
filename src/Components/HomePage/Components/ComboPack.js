@@ -17,7 +17,10 @@ const ComboPack = () => {
           </div>
         </div>
         <div className="cp-cards-cont">
-          <div className="cp-card1" onClick={() => navigate("/custompack")}>
+          <div
+            className="cp-card1"
+            onClick={() => navigate("/category/customizepack")}
+          >
             <div className="cp-card1-top">
               <div className="cp-head">
                 <div>Customized Pack</div>
@@ -62,7 +65,10 @@ const ComboPack = () => {
               </svg>
             </div>
           </div>
-          <div className="cp-card2" onClick={() => navigate("/allaccess")}>
+          <div
+            className="cp-card2"
+            onClick={() => navigate("/category/allaccess")}
+          >
             <div className="cp-card1-top">
               <div className="cp-head">
                 <div>All Access Pack</div>
