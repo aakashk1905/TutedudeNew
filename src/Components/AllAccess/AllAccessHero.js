@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import useCart from "../../contexts/Cart";
 import courses from "../../contents/Courses.json";
-const AllAccessHero = ({ setShowLogin }) => {
+const AllAccessHero = ({ setShowLogin, setRedirect }) => {
   const navigate = useNavigate();
   const [name, setName] = useState(Cookies.get("user_name"));
   const { setSelectedCourse } = useCart();

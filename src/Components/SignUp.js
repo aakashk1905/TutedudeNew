@@ -8,12 +8,14 @@ import phone from "../Assests/Phone.svg";
 import Person from "../Assests/Person.svg";
 import emailImg from "../Assests/email.svg";
 import pass from "../Assests/pass.svg";
+import { useNavigate } from "react-router-dom";
 
-const SignUp = ({ setShowSign, setShowLogin, closeCross }) => {
+const SignUp = ({ setShowSign, setShowLogin, closeCross, redirect }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
+  const navigate = useNavigate();
   const onSignUp = (email, password, name, phone) => {
     console.log("onLogin email = ", email);
 
@@ -38,6 +40,7 @@ const SignUp = ({ setShowSign, setShowLogin, closeCross }) => {
           Cookies.set("user_name", name);
           window.alert("Registration Successfull!!!");
           setShowSign(false);
+          if (redirect) navigate(redirect);
           window.location.reload();
         } else {
           window.alert("Email Already Registerd!!! Please Log In...");

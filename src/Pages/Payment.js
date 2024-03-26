@@ -54,6 +54,7 @@ const Payment = () => {
     JEET200: 200,
     SRMKZILLA: 300,
     DIWALI300: 300,
+    DSSECRETFREESHIV: 698,
   };
   const feesback = ["3MONTHSREFUND", "3MONTHREFUND", "FEESBACK", "LEARNIT"];
 

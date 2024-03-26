@@ -17,9 +17,11 @@ const AllAccess = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
+
   const customSlideToExploreRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.gtag("event", "conversion", {
       send_to: "AW-711435738/CRmfCMKls7oDENrLntMC",
     });
@@ -44,19 +46,6 @@ const AllAccess = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const email = Cookies.get("user_email");
-  //   const name = Cookies.get("user_name");
-  //   if (!email || !name) {
-  //     setShowLogin(true);
-  //   }
-  // }, []);
-
-  // if (showSign)
-  //   return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
-
-  // if (showLogin)
-  //   return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -96,11 +85,11 @@ const AllAccess = () => {
         <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
       )}
       <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      <AllAccessHero setShowLogin={setShowLogin} />
+      <AllAccessHero setShowLogin={setShowSign} />
       <DiscoverAllAccess />
       <Customhow />
       <div ref={customSlideToExploreRef}>
-        <AllAccessBenefits setShowLogin={setShowLogin} />
+        <AllAccessBenefits setShowLogin={setShowSign} />
       </div>
 
       <AllChooseCourse />
@@ -108,7 +97,7 @@ const AllAccess = () => {
       <IntroFaq customFaq={query} />
       <IntroFooter />
       {console.log(showFloatSelected)}
-      {showFloatSelected && <AllFloatSelected setShowLogin={setShowLogin} />}
+      {showFloatSelected && <AllFloatSelected setShowLogin={setShowSign} />}
     </div>
   );
 };

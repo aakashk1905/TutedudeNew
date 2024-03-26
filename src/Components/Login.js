@@ -8,13 +8,22 @@ import cross from "../Assests/cross.svg";
 import emailImg from "../Assests/email.svg";
 import pass from "../Assests/pass.svg";
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
-const Login = ({ setShowLogin, setShowSign, closeCross, setBought, slug }) => {
+const Login = ({
+  setShowLogin,
+  setShowSign,
+  closeCross,
+  setBought,
+  slug,
+  redirect,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const onLogin = (email, password) => {
     console.log("onLogin email = ", email);
-
+    console.log("redirect", redirect);
     fetch("https://api.tutedude.com/login", {
       method: "POST",
       headers: {
@@ -30,7 +39,8 @@ const Login = ({ setShowLogin, setShowSign, closeCross, setBought, slug }) => {
         if (data.success === "true" || data.success === true) {
           Cookies.set("user_email", email);
           Cookies.set("user_pass", password);
-
+          setShowSign(false);
+          if (redirect) navigate(redirect);
           if (slug) {
             if (
               data.dashboard.courses &&

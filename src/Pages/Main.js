@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BrowseCourses from "../Components/HomePage/Components/BrowseCourses";
 import ComboPack from "../Components/HomePage/Components/ComboPack";
 import Hero from "../Components/HomePage/Components/Hero";
@@ -51,6 +51,9 @@ const Main = () => {
     },
   ];
   const customSlideToExploreRef = useRef(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

@@ -4,9 +4,19 @@ import curr2 from "../Assests/curr2.svg";
 import curr3 from "../Assests/curr3.svg";
 import "./Styles/IntroCurric.css";
 import Cookies from "js-cookie";
-const Curriculum = ({ bought, setShowLogin, details, topics2, topics1 }) => {
+import { useNavigate } from "react-router-dom";
+const Curriculum = ({
+  bought,
+  setShowLogin,
+  details,
+  topics2,
+  topics1,
+  slug,
+  setRedirect,
+}) => {
   const name = Cookies.get("user_name");
   const [viewMore, setViewMore] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="icurr-cont">
@@ -82,9 +92,7 @@ const Curriculum = ({ bought, setShowLogin, details, topics2, topics1 }) => {
         {bought ? (
           <div
             className="curr-btn"
-            onClick={() =>
-              window.open("https://tutedude.com/dashboard")
-            }
+            onClick={() => window.open("https://tutedude.com/dashboard")}
           >
             Got to Dashboard
           </div>
@@ -93,9 +101,10 @@ const Curriculum = ({ bought, setShowLogin, details, topics2, topics1 }) => {
             className="curr-btn"
             onClick={() => {
               if (!name) {
+                setRedirect(`/payment/${slug}`);
                 setShowLogin(true);
               } else {
-                window.open("http://localhost:3000/payment", "_blank");
+                navigate(`/payment/${slug}`);
               }
             }}
           >

@@ -4,8 +4,10 @@ import img1 from "../Assests/howcard1.svg";
 import img2 from "../Assests/howcard2.svg";
 import img3 from "../Assests/howcard3.svg";
 import Cookies from "js-cookie";
-const HowRefund = ({ bought, setShowLogin, cname }) => {
+import { useNavigate } from "react-router-dom";
+const HowRefund = ({ bought, setShowLogin, setRedirect, slug, cname }) => {
   const name = Cookies.get("user_name");
+  const navigate = useNavigate();
   return (
     <div className="hr-cont">
       <div className="hr-head">How 100% refund works?</div>
@@ -25,9 +27,7 @@ const HowRefund = ({ bought, setShowLogin, cname }) => {
             {bought ? (
               <div
                 className="hr-card-btn"
-                onClick={() =>
-                  window.open("https://tutedude.com/dashboard")
-                }
+                onClick={() => window.open("https://tutedude.com/dashboard")}
               >
                 Got to Dashboard
               </div>
@@ -36,9 +36,10 @@ const HowRefund = ({ bought, setShowLogin, cname }) => {
                 className="hr-card-btn"
                 onClick={() => {
                   if (!name) {
+                    setRedirect(`/payment/${slug}`);
                     setShowLogin(true);
                   } else {
-                    window.open("http://localhost:3000/payment", "_blank");
+                    navigate(`/payment/${slug}`);
                   }
                 }}
               >

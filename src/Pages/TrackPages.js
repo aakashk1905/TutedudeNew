@@ -67,7 +67,7 @@ const TrackPages = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
 
   useEffect(() => {
-    
+    window.scrollTo(0, 0);
     const handleScroll = () => {
       if (customSlideToExploreRef.current) {
         const customSlideToExploreRect =
@@ -106,7 +106,7 @@ const TrackPages = () => {
             className="mobile-floater-inner"
             onClick={() => {
               if (!name) {
-                setShowLogin(true);
+                setShowSign(true);
               } else {
                 setSelectedCourse(tracks[slug].curric);
                 navigate("/trackpayment");
@@ -117,7 +117,7 @@ const TrackPages = () => {
           </div>
         </div>
       )}
-      <TrackHero setShowLogin={setShowLogin} data={tracks[slug]} />
+      <TrackHero setShowLogin={setShowSign} data={tracks[slug]} />
       <div ref={customSlideToExploreRef}>
         <StipendCard />
       </div>

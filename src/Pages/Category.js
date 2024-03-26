@@ -63,8 +63,10 @@ const Category = () => {
 
   const customSlideToExploreRef = useRef(null);
   const [showFloatSelected, setShowFloatSelected] = useState(false);
+  const [redirect, setRedirect] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const handleScroll = () => {
       if (customSlideToExploreRef.current) {
         const customSlideToExploreRect =
@@ -95,12 +97,17 @@ const Category = () => {
         <title>{contents[slug]?.title}</title>
       </Helmet>
       {showSign && (
-        <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />
+        <SignUp
+          setShowSign={setShowSign}
+          redirect={redirect}
+          setShowLogin={setShowLogin}
+        />
       )}
       {showLogin && (
         <Login
           setBought={setBought}
           slug={slug}
+          redirect={redirect}
           setShowLogin={setShowLogin}
           setShowSign={setShowSign}
         />
@@ -119,7 +126,8 @@ const Category = () => {
               className="mobile-floater-inner"
               onClick={() => {
                 if (!name) {
-                  setShowLogin(true);
+                  setRedirect(`/payment/${slug}`);
+                  setShowSign(true);
                 } else {
                   navigate(`/payment/${slug}`);
                 }
@@ -134,21 +142,26 @@ const Category = () => {
         setShowLogin={setShowLogin}
         setShowSign={setShowSign}
         bought={bought}
+        setRedirect={setRedirect}
         cont={contents[slug]}
         slug={slug}
       />
       <div ref={customSlideToExploreRef}>
         <HowRefund
           bought={bought}
-          setShowLogin={setShowLogin}
+          setRedirect={setRedirect}
+          setShowLogin={setShowSign}
           cname={contents[slug].title}
+          slug={slug}
         />
       </div>
       <WhyRefund />
       <UnlockCourse />
       <Curriculum
         bought={bought}
-        setShowLogin={setShowLogin}
+        setShowLogin={setShowSign}
+        slug={slug}
+        setRedirect={setRedirect}
         topics1={contents[slug].topics1}
         topics2={contents[slug].topics2}
         details={contents[slug].details}

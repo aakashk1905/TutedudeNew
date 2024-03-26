@@ -22,6 +22,7 @@ const CustomPack = () => {
   const [showFloatSelected, setShowFloatSelected] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const handleScroll = () => {
       if (customSlideToExploreRef.current) {
         const customSlideToExploreRect =
@@ -45,18 +46,8 @@ const CustomPack = () => {
     window.gtag("event", "conversion", {
       send_to: "AW-711435738/CRmfCMKls7oDENrLntMC",
     });
-    // const email = Cookies.get("user_email");
-    // const name = Cookies.get("user_name");
-    // if (!email || !name) {
-    //   setShowLogin(true);
-    // }
   }, []);
 
-  // if (showSign)
-  //   return <SignUp setShowSign={setShowSign} setShowLogin={setShowLogin} />;
-
-  // if (showLogin)
-  //   return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
   const query = [
     {
       text: "How does the package course offer work?",
@@ -96,18 +87,17 @@ const CustomPack = () => {
         <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
       )}
       <Navbar setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      <CustomHero setShowLogin={setShowLogin} />
+      <CustomHero setShowLogin={setShowSign} />
       <Customhow />
       <div ref={customSlideToExploreRef}>
         <CustomSlideToExplore />
       </div>
       <UnderStandRefund />
-      {/* <SuggestedCoursePack /> */}
       <ChooseCourse />
       <EmbarkJourney />
       <IntroFaq customFaq={query} />
       <IntroFooter />
-      {showFloatSelected && <FloatSelected setShowLogin={setShowLogin} />}
+      {showFloatSelected && <FloatSelected setShowLogin={setShowSign} />}
     </div>
   );
 };

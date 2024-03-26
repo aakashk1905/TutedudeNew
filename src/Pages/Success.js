@@ -17,7 +17,7 @@ const Success = () => {
     }
     if (amt) {
       Cookies.set("amt", amt, { expires: 2 / (24 * 60) });
-      navigate("/success");
+      navigate("/letskillit");
     }
   }, [location.search, navigate]);
   return (

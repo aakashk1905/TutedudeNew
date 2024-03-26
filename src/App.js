@@ -1,6 +1,6 @@
 import "./App.css";
 import Category from "./Pages/Category";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Payment from "./Pages/Payment";
 import CustomPack from "./Pages/CustomPack";
 import AllAccess from "./Pages/AllAccess";
@@ -26,19 +26,9 @@ function App() {
     localStorage.setItem("selectedCourses", JSON.stringify(selectedCourse));
   }, [selectedCourse]);
 
-  function ScrollToTop() {
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
-  }
   return (
     <CartProvider value={{ selectedCourse, setSelectedCourse }}>
       <BrowserRouter>
-        <ScrollToTop />
         <Routes>
           <Route path="/">
             <Route path="" element={<Main />} />

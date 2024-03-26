@@ -6,7 +6,14 @@ import stars from "../Assests/stars.svg";
 import Navbar from "./Navbar";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
+const Hero = ({
+  setShowLogin,
+  setShowSign,
+  bought,
+  cont,
+  slug,
+  setRedirect,
+}) => {
   const name = Cookies.get("user_name");
   const navigate = useNavigate();
   return (
@@ -63,7 +70,8 @@ const Hero = ({ setShowLogin, setShowSign, bought, cont, slug }) => {
                   className="hero-enroll-btn"
                   onClick={() => {
                     if (!name) {
-                      setShowLogin(true);
+                      setRedirect(`/payment/${slug}`);
+                      setShowSign(true);
                     } else {
                       navigate(`/payment/${slug}`);
                     }
