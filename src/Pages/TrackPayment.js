@@ -16,6 +16,8 @@ const TrackPayment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
+  const [courses, setCourses] = useState("");
+
   const navigate = useNavigate();
 
   const { selectedCourse } = useCart();
@@ -32,6 +34,8 @@ const TrackPayment = () => {
     var p = 2999;
     if (selectedCourse.find((sc) => sc.slug === "uiux")) p = 2499;
     setPrice(p);
+    const slugString = selectedCourse.map((obj) => obj.slug).join(",");
+    setCourses(slugString);
   }, [selectedCourse]);
   const [onit, setOnit] = useState(1);
   const [completed, setCompleted] = useState([]);
@@ -422,7 +426,7 @@ const TrackPayment = () => {
 
                 window.fbq("track", " InitiateCheckout");
 
-                checkoutHandler(price - discount, name, email, coupon);
+                checkoutHandler(price - discount, name, email, courses, coupon);
               }}
             >
               proceed to pay

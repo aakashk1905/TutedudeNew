@@ -16,6 +16,7 @@ const CustomPayment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
+  const [courses, setCourses] = useState("");
   const navigate = useNavigate();
 
   const { selectedCourse } = useCart();
@@ -40,6 +41,9 @@ const CustomPayment = () => {
     } else {
       setPrice(0);
     }
+    const slugString = selectedCourse.map((obj) => obj.slug).join(",");
+    setCourses(slugString);
+   
   }, [selectedCourse]);
   const [onit, setOnit] = useState(1);
   const [completed, setCompleted] = useState([]);
@@ -97,7 +101,7 @@ const CustomPayment = () => {
     }
   };
 
-  const checkoutHandler = async (amount, name, email, course, coupon) => {
+  const checkoutHandler = async (amount, name, email, courses, coupon) => {
     const {
       data: { key },
     } = await axios.get("https://api.tutedude.com/lms/API/getkey");
@@ -118,7 +122,7 @@ const CustomPayment = () => {
       description: "TuteDude Course Purchase",
       image: logo,
       order_id: order.id,
-      callback_url: `https://api.tutedude.com/lms/API/paymentverification?name=${name}&email=${email}&course=${course}&amount=${amount}&coupon=${coupon}`,
+      callback_url: `https://api.tutedude.com/lms/API/paymentverification?name=${name}&email=${email}&course=${courses}&amount=${amount}&coupon=${coupon}`,
       prefill: {
         name,
         email,
@@ -432,7 +436,7 @@ const CustomPayment = () => {
 
                 window.fbq("track", " InitiateCheckout");
                 //   checkoutHandler(699 - discount, name, email, course.slug, coupon);
-                checkoutHandler(price - discount, name, email, coupon);
+                checkoutHandler(price - discount, name, email, courses, coupon);
               }}
             >
               proceed to pay

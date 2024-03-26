@@ -158,7 +158,7 @@ const BrowseCourses = () => {
       cimg: stockmarket,
       col: "#2BA700",
       bg: "rgba(43, 167, 0, 0.13)",
-      slug: "stockmarket",
+      slug: "fundamentalanalysis",
       type: "bussiness",
     },
     {
