@@ -40,7 +40,7 @@ const Login = ({
           Cookies.set("user_email", email);
           Cookies.set("user_pass", password);
           setShowSign(false);
-          if (redirect) navigate(redirect);
+
           if (slug) {
             if (
               data.dashboard.courses &&
@@ -52,6 +52,8 @@ const Login = ({
                 expirationDate.getTime() + 1 * 60 * 60 * 1000
               );
               Cookies.set("bought", true, { expires: expirationDate });
+            } else {
+              navigate(redirect);
             }
           }
           Cookies.set("user_name", data.sName);

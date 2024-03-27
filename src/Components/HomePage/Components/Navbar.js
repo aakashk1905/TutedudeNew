@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/Navbar.css";
 import logo from "../Assests/logo.png";
-import bars from "../Assests/bars.svg";
-import close from "../Assests/close.svg";
+// import bars from "../Assests/bars.svg";
+// import close from "../Assests/close.svg";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 const Navbar = ({ setShowLogin, setShowSign }) => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const name = Cookies.get("user_name");
 
@@ -18,7 +18,6 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
 
     alert("Logged Out Successfully!");
     window.location.reload();
-    // window.location.href = "https://tutedude.com/clearrr.php";
   };
 
   return (
@@ -38,13 +37,22 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
             <div className="home-nav-links-list-item"> FAQ'S</div>
           </div>
           {name ? (
-            <div className="home-nav-btn-cont nav-btn-contt">
-              {/* <div className="home-nav-login-btn logbtn">{name}</div> */}
-              <div
-                className="home-nav-logout-btn logbtn"
-                onClick={handleLogout}
-              >
-                Logout
+            <div className="nav-login-cont">
+              <div className="menu">
+                <div className="nav-login name-cont">{name}</div>
+                <ul className="menu-dropdown">
+                  <li
+                    className="nav-mddrop"
+                    onClick={() =>
+                      (window.location.href = `${window.location.origin}/dashboard`)
+                    }
+                  >
+                    Dashboard
+                  </li>
+                  <li className="nav-mddrop" onClick={handleLogout}>
+                    Logout
+                  </li>
+                </ul>
               </div>
             </div>
           ) : (
@@ -69,12 +77,9 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
               </div>
             </div>
           )}
-          {/* <div className="bars-cont" onClick={() => setOpen(true)}>
-            <img src={bars} alt="bars" />
-          </div> */}
+          
         </div>
       </div>
-      
     </>
   );
 };

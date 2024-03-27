@@ -15,6 +15,62 @@
   z-index: 111111;
 }
 
+.menu {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  min-width: 100%;
+  padding: 0 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  background: #fff;
+  top: calc(100% + 5px);
+  box-shadow: 1px 1px 10px black;
+  z-index: 100;
+  transition: 0.5s padding, 0.5s background;
+}
+
+.menu-dropdown > * {
+  overflow: hidden;
+  height: 30px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0);
+  white-space: nowrap;
+  transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5),
+    0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5),
+    0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color,
+    0.2s background-color;
+}
+.nav-mddrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 0 5px;
+  width: 100%;
+  margin: 0;
+  color: hsla(263, 66%, 52%, 0.81);
+}
+.menu-dropdown > *:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.menu:not(:hover) > .menu-dropdown > * {
+  visibility: hidden;
+
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgba(25, 25, 25, 0);
+  transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin, 0.3s color,
+    0.6s visibility;
+  z-index: 99;
+}
 .nav-login-cont {
   display: flex;
   gap: 20px;
@@ -29,7 +85,7 @@
   display: flex;
   width: 103px;
   height: 40px;
-  /* padding: 4px 42px 5px 40px; */
+
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -42,6 +98,16 @@
   font-weight: 500;
   line-height: normal;
   text-transform: capitalize;
+}
+
+.name-cont {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  width: fit-content;
+  max-width: 130px;
 }
 
 .nav-signup {
@@ -106,5 +172,15 @@
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
+  }
+  .name-cont {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    justify-content: flex-start;
+
+    padding: 10px 15px;
+    width: fit-content;
+    max-width: 130px;
   }
 }

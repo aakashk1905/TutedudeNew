@@ -20,10 +20,24 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
       <div className="nav-logo-cont pointer" onClick={() => navigate("/")}>
         <img src={logo} alt="logo" />
       </div>
+
       {name ? (
         <div className="nav-login-cont">
-          <div className="nav-login" onClick={handleLogout}>
-            Logout
+          <div className="menu">
+            <div className="nav-login name-cont">{name}</div>
+            <ul className="menu-dropdown">
+              <li
+                className="nav-mddrop"
+                onClick={() =>
+                  (window.location.href = `${window.location.origin}/dashboard`)
+                }
+              >
+                Dashboard
+              </li>
+              <li className="nav-mddrop" onClick={handleLogout}>
+                Logout
+              </li>
+            </ul>
           </div>
         </div>
       ) : (
@@ -31,7 +45,6 @@ const Navbar = ({ setShowLogin, setShowSign }) => {
           <div
             className="nav-login"
             onClick={() => {
-              // console.log("Clicked");
               setShowSign(false);
               setShowLogin(true);
             }}
