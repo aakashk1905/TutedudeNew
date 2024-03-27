@@ -41,17 +41,24 @@ const Login = ({
           Cookies.set("user_pass", password);
           setShowSign(false);
 
+          if (data.dashboard.courses) {
+            var expirationDate = new Date();
+            expirationDate.setTime(
+              expirationDate.getTime() + 1 * 60 * 60 * 1000
+            );
+            Cookies.set("bought", JSON.stringify(data.dashboard.courses));
+          }
           if (slug) {
             if (
               data.dashboard.courses &&
               data.dashboard.courses.includes(slug)
             ) {
               setBought(true);
-              var expirationDate = new Date();
-              expirationDate.setTime(
-                expirationDate.getTime() + 1 * 60 * 60 * 1000
-              );
-              Cookies.set("bought", true, { expires: expirationDate });
+              // var expirationDate = new Date();
+              // expirationDate.setTime(
+              //   expirationDate.getTime() + 1 * 60 * 60 * 1000
+              // );
+              // Cookies.set("bought", true, { expires: expirationDate });
             } else {
               navigate(redirect);
             }

@@ -23,8 +23,10 @@ const Category = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
   const name = Cookies.get("user_name");
-  const [bought, setBought] = useState(Cookies.get("bought") || false);
   const { slug } = useParams();
+  const boughtCookies = Cookies.get("bought");
+  const bt = boughtCookies ? JSON.parse(boughtCookies).includes(slug) : false;
+  const [bought, setBought] = useState(bt);
   const navigate = useNavigate();
 
   const ids = [
