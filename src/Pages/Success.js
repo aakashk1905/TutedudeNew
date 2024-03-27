@@ -13,7 +13,7 @@ const Success = () => {
     const amt = params.get("amt");
     const amount = Cookies.get("amt");
     if (amount) {
-      console.log("amount", amount);
+      window.fbq("track", "Purchase", { currency: "INR", value: amount });
     }
     if (amt) {
       Cookies.set("amt", amt, { expires: 2 / (24 * 60) });
