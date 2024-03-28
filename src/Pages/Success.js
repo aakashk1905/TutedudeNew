@@ -14,6 +14,12 @@ const Success = () => {
     const amount = Cookies.get("amt");
     if (amount) {
       window.fbq("track", "Purchase", { currency: "INR", value: amount });
+      window.gtag("event", "conversion", {
+        send_to: "AW-711435738/UBkMCNqpn_MCENrLntMC",
+        value: amount,
+        currency: "INR",
+        transaction_id: "",
+      });
     }
     if (amt) {
       Cookies.set("amt", amt, { expires: 2 / (24 * 60) });
